@@ -1,10 +1,10 @@
 doctype html
 html(lang="ru")
-
+  include ../helpers/arrays
   include ../modules/_head
 
   body.page-body
-    include ../helpers/arrays
+    //- include ../helpers/arrays
     include ../modules/_header
 
 
@@ -19,12 +19,12 @@ html(lang="ru")
     include ../modules/_footer
 
     //- if modal_request
-      //- include ../modules/_modal-request
-      //- include ../modules/_modal-thanks
+    //- include ../modules/_modal-request
+    //- include ../modules/_modal-thanks
 
 
 
-      //- include ../modules/_modal-request
-      //- include ../modules/_modal-thanks
-      //- include ../modules/_modal-case
+    //- include ../modules/_modal-request
+    //- include ../modules/_modal-thanks
+    //- include ../modules/_modal-case
     include ../modules/_scripts

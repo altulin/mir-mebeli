@@ -1,1 +1,42 @@
 //
+.header {
+
+  &__inner {}
+
+  &__logo {}
+
+  &__nav {}
+}
+
+.container {}
+
+.logo {
+
+  &__img {}
+}
+
+.nav {
+
+  &__item {}
+
+  &__link {
+
+    &--catalog {}
+  }
+
+  &__list-sub {}
+}
+
+.nav-top {
+
+  &__list {}
+}
+
+.slimmenu {}
+
+.sub-list {
+
+  &__item {}
+
+  &__link {}
+}

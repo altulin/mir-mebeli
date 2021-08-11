@@ -10,14 +10,14 @@ html {
 }
 
 body {
-  @include font(AvenirNextCyr);
+  font-family: 'Montserrat', sans-serif;
 
   display: flex;
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
   line-height: 1.2;
-  color: $text;
+  background-color: $bg;
 }
 
 a {

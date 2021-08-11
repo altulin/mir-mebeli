@@ -65,6 +65,7 @@
   },
   "dependencies": {
     "gulp-sass-glob": "^1.1.0",
+    "jquery": "^3.6.0",
     "minimist": "^1.2.5",
     "swiper": "^6.6.1"
   }

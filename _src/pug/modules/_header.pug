@@ -1,20 +1,34 @@
 header.header#header
   .header__inner.container
     a.header__logo.logo(href="/index.html")
-      //- +img-retina(`logo`, `png`, `логотип`, `logo__img`, `130`, `20`)
+      +img-retina(`logo`, `png`, `логотип`, `logo__img`, `238`, `36`)
 
-    nav.header__nav.nav-top#header-nav
-      ul.nav-top__list
-        //- each item in header_nav
-          li.nav-top__item.nav-top__item--top
-            a.nav-top__link.nav-top__link--top(href=`${item[1]}`)= `${item[0]}`
+    nav.header__nav.nav#header-nav
+      ul.nav-top__list.slimmenu
+
+        li.nav__item
+          a.nav__link(href='') консультация дизайнера интерьера
+
+        li.nav__item
+          a.nav__link(href='') декорирование интерьера
+
+        li.nav__item
+          a.nav__link.nav__link--catalog(href='#') Каталог мебели
+          ul.nav__list-sub.sub-list
+            each item in catalogItems
+              li.sub-list__item
+                a.sub-list__link(href='#')= item
+
+        li.nav__item.nav__item--tel
+          a.nav__link.nav__link--tel(href="tel:+73952503504") +7 (3952) 503-504
 
 
 
-    a.header__link.header__link--open(href="#header__nav")
+
+    //- a.header__link.header__link--open(href="#header__nav")
       span.header__link-text Открыть меню
       //- +svg_my(`menu-open`, `header__link-icon-open`)
 
-    a.header__link.header__link--close.hidden-link(href="#header__nav")
+    //- a.header__link.header__link--close.hidden-link(href="#header__nav")
       span.header__link-text Закрыть меню
       //- +svg_my(`menu-open`, `header__link-icon-close`)
