@@ -1,17 +1,46 @@
 // import addEventResize from "./modules/resize";
 
 // addEventResize();
-console.log("dfgdfg");
-console.log($(".slimmenu"));
 
-$(".slimmenu").slimmenu({
-  resizeWidth: "767",
-  initiallyVisible: false,
-  collapserTitle: "Main Menu",
-  animSpeed: "medium",
-  easingEffect: null,
-  indentChildren: false,
-  childrenIndenter: "&nbsp;",
-  expandIcon: "<i>&#9660;</i>",
-  collapseIcon: "<i>&#9650;</i>",
-});
+const reload = () => {
+  window.onresize = function () {
+    window.location.reload();
+  };
+};
+
+const getAccordionNav = () => {
+  const windowWidth = window.innerWidth;
+  const accordionNav = $(".nav__item--down");
+
+  if (accordionNav.length > 0 && windowWidth <= 1200)
+    $(".nav__item--down").accordion({
+      transitionSpeed: 400,
+    });
+};
+
+const getDropDown = () => {
+  const itemDown = $(".nav__item--down");
+  const classActive = "nav__item--down-active";
+
+  const addClass = () => {
+    itemDown.addClass(classActive);
+  };
+
+  const removeClass = () => {
+    itemDown.removeClass(classActive);
+  };
+
+  if (itemDown.length > 0) {
+    itemDown.on("mouseover", () => {
+      addClass();
+    });
+
+    itemDown.on("mouseleave", () => {
+      removeClass();
+    });
+  }
+};
+
+reload();
+getAccordionNav();
+getDropDown();

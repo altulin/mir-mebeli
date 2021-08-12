@@ -4,7 +4,7 @@ header.header#header
       +img-retina(`logo`, `png`, `логотип`, `logo__img`, `238`, `36`)
 
     nav.header__nav.nav#header-nav
-      ul.nav-top__list.slimmenu
+      ul.nav__list
 
         li.nav__item
           a.nav__link(href='') консультация дизайнера интерьера
@@ -12,12 +12,20 @@ header.header#header
         li.nav__item
           a.nav__link(href='') декорирование интерьера
 
-        li.nav__item
-          a.nav__link.nav__link--catalog(href='#') Каталог мебели
-          ul.nav__list-sub.sub-list
+        li.nav__item.nav__item--down(data-accordion)
+          a.nav__link.nav__link--down.nav__link--catalog(href='#' data-control)
+            +svg('hamburger',14, 12,  'nav__link-hamburger')
+            span  Каталог мебели
+          ul.nav__list-sub.sub-list(data-content)
             each item in catalogItems
               li.sub-list__item
                 a.sub-list__link(href='#')= item
+          //- ul.nav__list-sub.sub-list
+          //-   li.sub-list__item.catalog-point
+          //-     ul.catalog-point__list
+          //-       each item in catalogItems
+          //-         li.catalog-point__item
+          //-           a.catalog-point__link(href='#')= item
 
         li.nav__item.nav__item--tel
           a.nav__link.nav__link--tel(href="tel:+73952503504") +7 (3952) 503-504

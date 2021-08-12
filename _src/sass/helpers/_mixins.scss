@@ -11,11 +11,12 @@
 }
 
 @function rem($size) {
-  @return ($size / 16) + rem;
+  @return ($size / 16)+rem;
 }
 
 // Media mixin
 @mixin mw($width) {
+
   // @media screen and (max-width: $width + "px")
   @media screen and (max-width: $width) {
     @content;
@@ -25,8 +26,8 @@
 // Font mixin
 @mixin font-load($name, $size, $weight, $style) {
   @font-face {
-    src: url("/fonts/" + $name + "-" + $size + ".woff2") format("woff2");
-    src: url("/fonts/" + $name + "-" + $size + ".woff") format("woff");
+    src: url("/fonts/"+ $name + "-"+ $size + ".woff2") format("woff2");
+    src: url("/fonts/"+ $name + "-"+ $size + ".woff") format("woff");
     font-family: $name;
     font-weight: $weight;
     font-style: $style;
@@ -43,18 +44,18 @@
 @mixin centered($axis: "both") {
   position: absolute;
 
-  @if $axis == "both" {
+  @if $axis=="both" {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
   }
 
-  @if $axis == "x" {
+  @if $axis=="x" {
     left: 50%;
     transform: translateX(-50%);
   }
 
-  @if $axis == "y" {
+  @if $axis=="y" {
     top: 50%;
     transform: translateY(-50%);
   }
@@ -62,17 +63,24 @@
 
 // hover + focus
 @mixin hocus($pseudo: "none") {
-  @if $pseudo == "after" {
+  @if $pseudo=="after" {
+
     &:hover::after,
     &:focus::after {
       @content;
     }
-  } @else if $pseudo == "before" {
+  }
+
+  @else if $pseudo=="before" {
+
     &:hover::before,
     &:focus::before {
       @content;
     }
-  } @else {
+  }
+
+  @else {
+
     &:hover,
     &:focus {
       @content;

@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  @include font("Montserrat");
 
   display: flex;
   flex-direction: column;
@@ -129,6 +129,6 @@ button {
   }
 }
 
-// * {
-//   outline: 1px solid #ff6347;
-// }
+* {
+  // outline: 1px solid #ff6347;
+}

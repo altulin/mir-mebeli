@@ -1,2 +1,4 @@
 // @include font-load(AvenirNextCyr, Demi, 600, normal)
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+@include font-load(Montserrat, Light, 300, normal);
+@include font-load(Montserrat, Regular, 400, normal);
+@include font-load(Montserrat, SemiBold, 600, normal);
