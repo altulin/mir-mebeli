@@ -1,16 +1,24 @@
 header.header#header
   .header__inner.container.container--header
-    a.header__logo.logo(href="/index.html")
-      +img-retina(`logo`, `png`, `логотип`, `logo__img`, `238`, `36`)
+    a.header__link-tel(href="tel:+73952503504") +7 (3952) 503-504
+
+    .header__logo-wrap
+      a.header__logo.logo(href="/index.html")
+        +img-retina(`logo`, `png`, `логотип`, `logo__img`, `238`, `36`)
 
     nav.header__nav.nav#header-nav
+
+
+      a.nav__logo(href="/index.html")
+        +img-retina(`nav-logo`, `png`, `логотип`, `nav__logo-img`, `141`, `21`)
+
       ul.nav__list
 
         li.nav__item
-          a.nav__link(href='') консультация дизайнера интерьера
+          a.nav__link(href='#') консультация дизайнера&nbsp;интерьера
 
         li.nav__item
-          a.nav__link(href='') декорирование интерьера
+          a.nav__link(href='#') декорирование интерьера
 
         li.nav__item.nav__item--down(data-accordion)
           a.nav__link.nav__link--down.nav__link--catalog(href='#' data-control)
@@ -20,23 +28,28 @@ header.header#header
             each item in catalogItems
               li.sub-list__item
                 a.sub-list__link(href='#')= item
-          //- ul.nav__list-sub.sub-list
-          //-   li.sub-list__item.catalog-point
-          //-     ul.catalog-point__list
-          //-       each item in catalogItems
-          //-         li.catalog-point__item
-          //-           a.catalog-point__link(href='#')= item
+
+        li.nav__item.nav__item__contacts
+          a.nav__link(href='#') контакты
+
 
         li.nav__item.nav__item--tel
           a.nav__link.nav__link--tel(href="tel:+73952503504") +7 (3952) 503-504
 
+      a.header__link.header__link--close.hidden-link(href="#header-nav")
+        span.header__link-text Закрыть меню
+        +svg(`menu-close`, 23, 23, `header__link-close`)
+
+      a.nav__record.record-link.record-link--nav(href="#")
+        +svg('record', '90', '49', 'record-link')
+        span.record-link__text Заказать звонок
 
 
 
-    //- a.header__link.header__link--open(href="#header__nav")
+    a.header__link.header__link--open(href="#header-nav")
       span.header__link-text Открыть меню
-      //- +svg_my(`menu-open`, `header__link-icon-open`)
+      +svg('hamburger-mob',41, 24,  'header__link-open')
 
-    //- a.header__link.header__link--close.hidden-link(href="#header__nav")
-      span.header__link-text Закрыть меню
-      //- +svg_my(`menu-open`, `header__link-icon-close`)
+    //- a.header__link.header__link--close.hidden-link(href="#header-nav")
+    //-   span.header__link-text Закрыть меню
+    //-   +svg(`menu-close`, 23, 23, `header__link-close`)

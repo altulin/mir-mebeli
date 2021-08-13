@@ -4,20 +4,25 @@ $white: #fff;
 $bg: #F6F6F6;
 
 // sizes;
-$width: 1100px;
+$width-dt: 1100px;
+$width-tablet: 559px;
+$width-phone: 1100px;
 $gap: 20px;
-$gap-tablet: 64px;
+$gap-tablet: 22px;
 $gap-phone: 21px;
 
 // breackpoints;
 $ph: 600px;
 $tb: 768px;
+$empty: 1000px;
 $dt: 1200px;
 $ldt: 1440px;
 
 // other;
 $text-dark: #202020;
 $green: #718753;
-$delay: 0.3s;
+$green-two: #405A26;
+$grey: #D5D2D5;
 
-// font
+//
+$delay: 0.3s;

@@ -25,15 +25,20 @@
 
 <body class="page-body">
   <header class="header" id="header">
-    <div class="header__inner container container--header">
-      <a class="header__logo logo" href="/index.html">
-        <img class="logo__img" src="/img/logo.png" srcset="/img/logo.png 1x, /img/logo@2x.png 2x" alt="логотип" width="238" height="36" loading="lazy" />
-      </a>
+    <div class="header__inner container container--header"><a class="header__link-tel" href="tel:+73952503504">+7 (3952) 503-504</a>
+      <div class="header__logo-wrap">
+        <a class="header__logo logo" href="/index.html">
+          <img class="logo__img" src="/img/logo.png" srcset="/img/logo.png 1x, /img/logo@2x.png 2x" alt="логотип" width="238" height="36" loading="lazy" />
+        </a>
+      </div>
       <nav class="header__nav nav" id="header-nav">
+        <a class="nav__logo" href="/index.html">
+          <img class="nav__logo-img" src="/img/nav-logo.png" srcset="/img/nav-logo.png 1x, /img/nav-logo@2x.png 2x" alt="логотип" width="141" height="21" loading="lazy" />
+        </a>
         <ul class="nav__list">
-          <li class="nav__item"><a class="nav__link" href="">консультация дизайнера интерьера</a>
+          <li class="nav__item"><a class="nav__link" href="#">консультация дизайнера&nbsp;интерьера</a>
           </li>
-          <li class="nav__item"><a class="nav__link" href="">декорирование интерьера</a>
+          <li class="nav__item"><a class="nav__link" href="#">декорирование интерьера</a>
           </li>
           <li class="nav__item nav__item--down" data-accordion>
             <a class="nav__link nav__link--down nav__link--catalog" href="#" data-control>
@@ -88,10 +93,23 @@
               </li>
             </ul>
           </li>
+          <li class="nav__item nav__item__contacts"><a class="nav__link" href="#">контакты</a>
+          </li>
           <li class="nav__item nav__item--tel"><a class="nav__link nav__link--tel" href="tel:+73952503504">+7 (3952) 503-504</a>
           </li>
-        </ul>
-      </nav>
+        </ul><a class="header__link header__link--close hidden-link" href="#header-nav"><span class="header__link-text">Закрыть меню</span>
+            <svg class="header__link-close__icon" viewBox="0 0 23 23" width="23" height="23">
+              <use xlink:href="/img/sprite.svg#menu-close"></use>
+            </svg></a>
+        <a class="nav__record record-link record-link--nav" href="#">
+          <svg class="record-link__icon" viewBox="0 0 90 49" width="90" height="49">
+            <use xlink:href="/img/sprite.svg#record"></use>
+          </svg><span class="record-link__text">Заказать звонок</span>
+        </a>
+      </nav><a class="header__link header__link--open" href="#header-nav"><span class="header__link-text">Открыть меню</span>
+          <svg class="header__link-open__icon" viewBox="0 0 41 24" width="41" height="24">
+            <use xlink:href="/img/sprite.svg#hamburger-mob"></use>
+          </svg></a>
     </div>
   </header>
   <main class="page-main">

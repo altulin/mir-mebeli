@@ -80,14 +80,16 @@ button {
   margin-left: auto;
   padding-right: $gap;
   padding-left: $gap;
-  max-width: $width + $gap * 2;
+  max-width: $width-dt + $gap * 2;
 
   @include mw($tb) {
+    max-width: $width-tablet + $gap-tablet * 2;
     padding-right: $gap-tablet;
     padding-left: $gap-tablet;
   }
 
   @include mw($ph) {
+    max-width: $width-phone+$gap-phone * 2;
     padding-right: $gap-phone;
     padding-left: $gap-phone;
   }

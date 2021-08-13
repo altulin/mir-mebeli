@@ -8,10 +8,10 @@ const mode = pluginsObject.minimist(process.argv.slice(2))._[0];
 const assemblyWebpack = false; // webpack true or false
 const assemblyBabel = false; // babel true or false
 
-const plugunsJsUsed = [`jquery_js`, `myJsLibs`, `myJsFile`];
+const plugunsJsUsed = [`jquery_js`, `mmenu_js`, `myJsLibs`, `myJsFile`];
 const plugunsCssUsed = [
   `normalize_css`,
-  // `mmenu_css`,
+  `mmenu_css`,
   // `swiper_css`,
   `myCssLibs`,
   `myCssFile`,
