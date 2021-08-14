@@ -1,6 +1,6 @@
 import pluginsObject from "./plugins.js";
 
-const projectName = `empty`; // название проекта
+const projectName = `mir`; // название проекта
 const distFolder = `${projectName}_dist`; // Папка продакшн
 const srcFolder = `_src`; // Папка разработки
 

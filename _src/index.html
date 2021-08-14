@@ -28,16 +28,12 @@
     <div class="header__inner container container--header"><a class="header__link-tel" href="tel:+73952503504">+7 (3952) 503-504</a>
       <div class="header__logo-wrap">
         <a class="header__logo logo" href="/index.html">
-          <picture>
-            <img class="logo__img" src="/img/logo.png" srcset="/img/logo.png 1x, /img/logo@2x.png 2x" alt="логотип" width="238" height="36" loading="lazy" />
-          </picture>
+          <img class="logo__img" src="/img/logo.png" srcset="/img/logo.png 1x, /img/logo@2x.png 2x" alt="логотип" width="238" height="36" loading="lazy" />
         </a>
       </div>
       <nav class="header__nav nav" id="header-nav">
         <a class="nav__logo" href="/index.html">
-          <picture>
-            <img class="nav__logo-img" src="/img/nav-logo.png" srcset="/img/nav-logo.png 1x, /img/nav-logo@2x.png 2x" alt="логотип" width="141" height="21" loading="lazy" />
-          </picture>
+          <img class="nav__logo-img" src="/img/nav-logo.png" srcset="/img/nav-logo.png 1x, /img/nav-logo@2x.png 2x" alt="логотип" width="141" height="21" loading="lazy" />
         </a>
         <ul class="nav__list">
           <li class="nav__item"><a class="nav__link" href="#">консультация дизайнера&nbsp;интерьера</a>
@@ -120,22 +116,24 @@
     <section class="promo">
       <div class="promo__img-wrap">
         <picture>
+          <source media="(max-width: 360px)" srcset="/img/promo-bg-360.jpg 1x, /img/promo-bg-360@2x.jpg 2x" />
+          <source media="(max-width: 412px)" srcset="/img/promo-bg-412.jpg 1x, /img/promo-bg-412@2x.jpg 2x" />
           <source media="(max-width: 768px)" srcset="/img/promo-bg-768.jpg 1x, /img/promo-bg-768@2x.jpg 2x" />
           <source media="(max-width: 1200px)" srcset="/img/promo-bg-1200.jpg 1x, /img/promo-bg-1200@2x.jpg 2x" />
           <source media="(max-width: 1440px)" srcset="/img/promo-bg-1440.jpg 1x, /img/promo-bg-1440@2x.jpg 2x" />
           <img class="promo__img" src="/img/promo-bg.jpg" srcset="/img/promo-bg.jpg 1x, /img/promo-bg@2x.jpg 2x" alt="" width="1920" height="965" loading="lazy" />
         </picture>
       </div>
-      <div class="promo__inner container">
-        <h2 class="promo__title">Поможем создать пространство для комфорта вашей жизни</h2>
+      <div class="promo__inner">
+        <h2 class="promo__title">Поможем<br>создать пространство<br>для&nbsp;комфорта вашей жизни</h2>
         <div class="promo__slogan promo-slogan">
           <p class="promo-slogan__text">Стоимость консультации вернется в ваш дом мебелью</p>
-          <a class="promo-slogan__link record-link" href="#">
-            <svg class="record-link__icon" viewBox="0 0 90 49" width="90" height="49">
-              <use xlink:href="/img/sprite.svg#record"></use>
-            </svg><span class="record-link__text">Записаться</span>
-          </a>
         </div>
+        <a class="promo-slogan__link record-link" href="#">
+          <svg class="record-link__icon" viewBox="0 0 90 49" width="90" height="49">
+            <use xlink:href="/img/sprite.svg#record"></use>
+          </svg><span class="record-link__text">Записаться</span>
+        </a>
       </div>
     </section>
   </main>

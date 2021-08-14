@@ -6,13 +6,17 @@ block content
 
   section.promo
     .promo__img-wrap
-      +img-retina(`promo-bg`, `jpg`,``,`promo__img`, `1920`,`965`, 768, 1200, 1440)
+      +img-retina(`promo-bg`, `jpg`,``,`promo__img`, `1920`,`965`,360, 412, 768, 1200, 1440)
 
-    .promo__inner.container
-      h2.promo__title Поможем создать пространство для комфорта вашей жизни
+    .promo__inner
+      h2.promo__title Поможем
+        br
+        | создать пространство
+        br
+        | для&nbsp;комфорта вашей жизни
       .promo__slogan.promo-slogan
         p.promo-slogan__text Стоимость консультации вернется в ваш дом мебелью
 
-        a.promo-slogan__link.record-link(href="#")
-          +svg('record', '90', '49', 'record-link')
-          span.record-link__text Записаться
+      a.promo-slogan__link.record-link(href="#")
+        +svg('record', '90', '49', 'record-link')
+        span.record-link__text Записаться

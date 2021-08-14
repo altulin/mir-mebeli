@@ -102,14 +102,20 @@
 
 
   &__logo {
-    // width: ;
-    // height: 36px;
     display: flex;
     align-items: center;
 
-    @include mw($ldt) {
-      // width: 178px;
-      // height: 26px;
+    @include mw($ldt) {}
+
+    @include mw($empty) {
+      width: 124px;
+      height: 18px;
+      margin-right: 0;
+    }
+
+    @include mw($ph) {
+      width: 117px;
+      height: 17px;
     }
   }
 }
@@ -136,24 +142,20 @@
       justify-content: space-between;
       flex-wrap: wrap;
     }
+
+    @include mw($tb) {
+      padding-top: 42px;
+      padding-bottom: 0;
+    }
+
+    @include mw($ph) {
+      padding-top: 25px;
+    }
   }
 }
 
 .logo {
-  // display: block;
-  // width: 238px;
-  // height: 36px;
   flex-shrink: 0;
-
-
-
-  @include mw($empty) {
-    width: 124px;
-    height: 18px;
-    margin-right: 0;
-  }
-
-
 }
 
 .nav {
@@ -164,9 +166,7 @@
     position: relative;
 
     @include mw($empty) {
-      // flex-wrap: wrap;
       flex-direction: column;
-
     }
   }
 
@@ -187,7 +187,6 @@
   &__item {
     background-color: transparent;
     border-left: none;
-    // width: fill-available;
 
     &+li {
       margin-left: 4%;
@@ -313,13 +312,7 @@
       @include hocus() {
         // background-color: tomato;
       }
-
-
     }
-
-
-
-
 
     &--tel {
       font-size: 20px;
@@ -327,7 +320,6 @@
       letter-spacing: 0.02em;
     }
 
-    p &--catalog {}
   }
 
   &__link-hamburger__icon {
@@ -344,10 +336,6 @@
     @include mw($empty) {
       display: none;
     }
-  }
-
-  &__list-sub {
-    // width: 300px;
   }
 }
 
@@ -395,15 +383,8 @@
     padding-right: 0;
   }
 
-
-
-
-
   &__item {
-
     width: 50%;
-
-
 
     &:nth-child(even) {
       padding-left: 30px;
@@ -417,8 +398,6 @@
         padding-left: 56px;
       }
     }
-
-
   }
 
   &__link {
@@ -462,14 +441,10 @@
 .mm-ocd__content {
   width: 100%;
   max-width: none;
-  // background-color: $green;
   background-image: linear-gradient(0deg, #36544F, #36544F),
     linear-gradient(0deg, #718753, #718753);
-
   overflow-y: auto;
 }
-
-
 
 .mm-ocd__backdrop {
   display: none;
@@ -480,7 +455,6 @@
   border: 2px solid $green-two;
   box-sizing: border-box;
   border-radius: 3px;
-  // max-width: 273px;
   display: flex;
   align-items: center;
   font-size: 22px;
@@ -507,7 +481,6 @@
     @include mw($empty) {
       display: flex;
     }
-
 
     & svg {
       stroke: rgba($white, 0.8);

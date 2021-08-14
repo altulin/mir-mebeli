@@ -18,7 +18,7 @@ mixin img(name, type, alt, className, width, height)
 
 //- +img-retina(``, ``, ``, ``, ``, ``)
 mixin img-retina(name, type, alt, className, width, height, ...args)
-  if args
+  if args.length > 0
     picture
 
       each item in args
