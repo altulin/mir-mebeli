@@ -2,8 +2,17 @@ extends ../templates/_main.pug
 include ../helpers/mixins.pug
 
 block content
-  h1.page-main__title
+
 
   section.promo
+    .promo__img-wrap
+      +img-retina(`promo-bg`, `jpg`,``,`promo__img`, `1920`,`965`, 768, 1200, 1440)
+
     .promo__inner.container
-      h2.promo__title
+      h2.promo__title Поможем создать пространство для комфорта вашей жизни
+      .promo__slogan.promo-slogan
+        p.promo-slogan__text Стоимость консультации вернется в ваш дом мебелью
+
+        a.promo-slogan__link.record-link(href="#")
+          +svg('record', '90', '49', 'record-link')
+          span.record-link__text Записаться

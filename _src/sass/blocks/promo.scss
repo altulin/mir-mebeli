@@ -1,0 +1,60 @@
+.promo {
+  margin-top: -174px;
+  position: relative;
+  height: 0;
+  padding-top: 50%;
+
+  @include mw($ldt) {
+    padding-top: 48%;
+  }
+
+  @include mw($dt) {
+    margin-top: -162px;
+    padding-top: 60%;
+  }
+
+  @include mw($empty) {
+    margin-top: -213px;
+  }
+
+  @include mw($tb) {
+    padding-top: 107%;
+  }
+
+
+  &__img-wrap {
+    width: 100%;
+    height: 100%;
+    @include centered(x);
+    top: 0;
+
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+
+
+  &__inner {}
+
+  &__title {}
+
+  &__slogan {}
+}
+
+.container {}
+
+.promo-slogan {
+
+  &__text {}
+
+  &__link {}
+}
+
+.record-link {
+
+  &__icon {}
+
+  &__text {}
+}

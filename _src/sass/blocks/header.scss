@@ -1,18 +1,49 @@
 //
 .header {
+  z-index: 1;
 
   &__inner {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-top: 56px;
     padding-bottom: 56px;
+
+    @include mw($tb) {
+      padding-top: 54px;
+      padding-bottom: 54px;
+    }
+  }
+
+  &__logo-wrap {
+    margin-right: 8%;
+    width: 14%;
+    flex-shrink: 0;
+
+    @include mw($ldt) {
+      margin-right: 10%;
+      width: 15%;
+    }
+
+    @include mw($dt) {
+      width: 17%;
+      margin-right: 6%;
+    }
+
+    @include mw($empty) {
+      width: 100%;
+      order: 1;
+      margin-top: 59px;
+    }
+
   }
 
 
 
+
+
   &__nav {
-    flex-grow: 0.5;
+    flex-grow: 1;
+    // max-width: 1263px;
 
     @include mw($empty) {
       flex-grow: 1;
@@ -68,35 +99,34 @@
     }
   }
 
-  &__logo-wrap {
-    @include mw($empty) {
-      width: 100%;
-      order: 1;
-      margin-top: 59px;
+
+
+  &__logo {
+    // width: ;
+    // height: 36px;
+    display: flex;
+    align-items: center;
+
+    @include mw($ldt) {
+      // width: 178px;
+      // height: 26px;
     }
   }
 }
 
 .container {
   &--header {
-    max-width: 1920px;
+    max-width: 1696px;
+
+
 
     @include mw($ldt) {
-      padding-left: 135px;
-      padding-right: 135px;
-    }
-
-    @include mw($ldt) {
-      max-width: 1170px;
-      padding-left: 0px;
-      padding-right: 0px;
+      max-width: 1210px;
     }
 
 
     @include mw($dt) {
-      max-width: 995px;
-      // padding-left: 103px;
-      // padding-right: 103px;
+      max-width: 1034px;
     }
 
     @include mw($empty) {
@@ -110,14 +140,12 @@
 }
 
 .logo {
-  display: block;
-  width: 238px;
-  height: 36px;
+  // display: block;
+  // width: 238px;
+  // height: 36px;
   flex-shrink: 0;
 
-  @include mw($ldt) {
-    margin-right: 50px;
-  }
+
 
   @include mw($empty) {
     width: 124px;
@@ -159,6 +187,20 @@
   &__item {
     background-color: transparent;
     border-left: none;
+    // width: fill-available;
+
+    &+li {
+      margin-left: 4%;
+
+      @include mw($ldt) {
+        margin-left: 8%;
+      }
+
+      @include mw($dt) {
+        margin-left: 4%;
+        margin-left: 0;
+      }
+    }
 
     &__contacts {
       display: none;
@@ -189,8 +231,11 @@
 
 
 
-    &--tel {
+    &--tel.nav__item {
       flex-shrink: 0;
+      margin-left: 9%;
+      display: flex;
+      align-items: center;
 
       @include mw($empty) {
         display: none;
@@ -228,6 +273,7 @@
 
     @include mw($ldt) {
       font-size: 14px;
+      line-height: 20px;
     }
 
     @include mw($empty) {
@@ -235,6 +281,7 @@
       padding-top: 10px;
       padding-bottom: 9px;
       padding-left: 56px;
+      padding-right: 20px;
     }
 
     @include hocus(after) {
@@ -277,6 +324,7 @@
     &--tel {
       font-size: 20px;
       color: $black;
+      letter-spacing: 0.02em;
     }
 
     p &--catalog {}
@@ -286,6 +334,8 @@
     margin-right: 12px;
     flex-shrink: 0;
     fill: $text-dark;
+    align-self: flex-start;
+    margin-top: 6px;
 
     @include mw($ldt) {
       margin-top: 7px;
@@ -461,13 +511,13 @@
 
     & svg {
       stroke: rgba($white, 0.8);
-      transform: scale(0.9);
+      transform: scale(0.8);
 
     }
   }
 
   &__text {
-    margin-left: 20px;
+    margin-left: 10px;
   }
 
   &__icon {
