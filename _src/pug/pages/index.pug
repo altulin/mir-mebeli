@@ -17,6 +17,43 @@ block content
       .promo__slogan.promo-slogan
         p.promo-slogan__text Стоимость консультации вернется в ваш дом мебелью
 
-      a.promo-slogan__link.record-link(href="#")
-        +svg('record', '90', '49', 'record-link')
+      a.promo-slogan__link.record-link.open-modal-consultation(href="#")
+        //- +svg('record', '90', '49', 'record-link')
+        span.record-link__icon
         span.record-link__text Записаться
+
+  section.benefit.line-block
+    .benefit__inner.container.container--border
+
+      h2.benefit__title.title Мы&nbsp;будем полезны,&nbsp;если:
+      ul.benefit__list
+
+
+
+
+
+
+
+  section.modal.modal--consultation.modal-consultation#modal-consultation
+    .modal__inner
+      h2.modal__title.modal__title--consultation Записаться на&nbsp;консультацию
+      p.modal__text.modal__text--consultation C вами свяжется дизайнер и&nbsp;ответит на&nbsp;все&nbsp;  вопросы
+
+      form.modal__form.form-consultation
+        .form-consultation__block(action="" method="post")
+          input.form-consultation__input.form-consultation__input-tel#form-consultation-tel.mask(type="text" name="form-consultation-tel" placeholder="Ваш телефон" required)
+          label.form-consultation__label.form-consultation__label-tel(for="form-consultation-tel")
+
+        button.form-consultation__btn(type="submit") ОТПРАВИТЬ
+
+        .form-consultation__block
+          input.form-consultation__input.form-consultation__input-consent#form-consultation-consent(type="checkbox" checked name="form-consultation-consent")
+          label.form-consultation__label.form-consultation__label-consent(for="form-consultation-consent") Отправляя заявку, я даю согласие на&nbsp;обработку персональных данных
+
+  section.modal.modal--success.modal-success#modal-success
+    .modal__inner
+      h2.modal__title.modal__title--success Заявка отправлена
+      figure.modal-success__img
+      p.modal__text.modal__text--success Спасибо за обращение в наш салон.
+        br
+        | Мы перезвоним вам в ближайшее время.

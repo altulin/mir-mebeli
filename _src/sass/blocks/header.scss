@@ -33,7 +33,9 @@
       width: 100%;
       order: 1;
       margin-top: 59px;
+      margin-right: 0;
     }
+
 
   }
 
@@ -123,6 +125,8 @@
 .container {
   &--header {
     max-width: 1696px;
+    padding-left: 20px;
+    padding-right: 20px;
 
 
 
@@ -136,9 +140,9 @@
     }
 
     @include mw($empty) {
-      padding-left: $gap-tablet;
-      padding-right: $gap-tablet;
-      max-width: $width-tablet + $gap-phone * 2;
+      padding-left: 22px;
+      padding-right: 22px;
+      max-width: $width-tablet + 44px;
       justify-content: space-between;
       flex-wrap: wrap;
     }
@@ -150,6 +154,14 @@
 
     @include mw($ph) {
       padding-top: 25px;
+      max-width: 323px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    @include mw($min-ph) {
+      max-width: 271px;
+
     }
   }
 }

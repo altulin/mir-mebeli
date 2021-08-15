@@ -1,0 +1,194 @@
+.blocker {
+  background-color: transparent;
+
+  @include mw($ph) {
+    padding: 0;
+
+    &::before {
+      content: none;
+    }
+  }
+}
+
+.modal {
+  max-width: 589px;
+  background-color: $green;
+  box-shadow: none;
+  border-radius: 0;
+  padding-top: 54px;
+  padding-bottom: 39px;
+
+  @include mw($ph) {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+  }
+
+  & a.close-modal {
+    background-image: url(/img/svg/modal-close.svg);
+    width: 60px;
+    height: 60px;
+    background-size: 20px 20px;
+    background-position: center;
+    top: 10px;
+    right: 10px;
+    transition: $delay;
+
+    @include hocus() {
+      opacity: 0.6;
+    }
+  }
+
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 20px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: $white;
+    font-weight: 400;
+    text-align: center;
+
+    &--consultation {
+      margin-bottom: 11px;
+
+      @include mw($ph) {
+        margin-bottom: 31px;
+        line-height: 24px;
+      }
+    }
+
+    &--success {
+      margin-bottom: 44px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 16px;
+    color: rgba($white, 0.9);
+    text-align: center;
+
+    &--consultation {
+      margin-bottom: 30px;
+    }
+
+    &--success {
+      line-height: 20px;
+    }
+  }
+
+  &__form {}
+}
+
+.modal-consultation {}
+
+.form-consultation {
+  max-width: 309px;
+
+  &__block {}
+
+  &__input {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 20px;
+    color: rgba($white, 0.9);
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 2px;
+    padding: 19px 32px;
+
+    &::placeholder {
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 20px;
+      color: rgba($white, 0.9);
+    }
+
+
+  }
+
+  &__input-tel {}
+
+  &__input-consent {
+    @include vh();
+    width: 300px;
+  }
+
+  &__label {
+
+    &-tel {
+      @include vh()
+    }
+
+
+  }
+
+  &__btn {
+    margin-top: 14px;
+    margin-bottom: 20px;
+    background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95));
+    border-radius: 2px;
+    font-size: 18px;
+    line-height: 20px;
+    color: $green-two;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    cursor: pointer;
+
+    @include mw($ph) {
+      margin-bottom: 37px;
+    }
+  }
+
+  &__input-consent:checked+label::before {
+    background-image: url(/img/svg/mark.svg)
+  }
+
+  &__label-consent {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: $white;
+    padding-left: 40px;
+    position: relative;
+    display: block;
+
+    @include mw($ph) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      width: 11px;
+      height: 11px;
+      background-color: $white;
+      left: 3px;
+      top: 3px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+
+.modal-success {
+
+  &__img {
+    margin-bottom: 38px;
+    width: 122px;
+    height: 55px;
+    background-image: url(/img/svg/mail.svg);
+  }
+}

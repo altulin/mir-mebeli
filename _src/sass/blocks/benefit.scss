@@ -1,0 +1,66 @@
+.benefit {
+  background-image: url(/img/svg/circle.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: calc((100vw - 1920px) / 2) 0;
+
+
+  &__inner {
+    height: 500px;
+
+
+  }
+
+
+
+}
+
+.line-block {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(64, 90, 38, 0.2);
+    left: 0;
+
+  }
+
+  &::before {
+    top: 73px;
+  }
+
+  &::after {
+    bottom: 73px;
+  }
+}
+
+.container {
+  &--border {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 100%;
+      background-color: rgba(64, 90, 38, 0.2);
+      top: 0;
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+
+
+  }
+
+}

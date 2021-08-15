@@ -128,12 +128,38 @@
         <h2 class="promo__title">Поможем<br>создать пространство<br>для&nbsp;комфорта вашей жизни</h2>
         <div class="promo__slogan promo-slogan">
           <p class="promo-slogan__text">Стоимость консультации вернется в ваш дом мебелью</p>
-        </div>
-        <a class="promo-slogan__link record-link" href="#">
-          <svg class="record-link__icon" viewBox="0 0 90 49" width="90" height="49">
-            <use xlink:href="/img/sprite.svg#record"></use>
-          </svg><span class="record-link__text">Записаться</span>
-        </a>
+        </div><a class="promo-slogan__link record-link open-modal-consultation" href="#"><span class="record-link__icon"></span><span class="record-link__text">Записаться</span></a>
+      </div>
+    </section>
+    <section class="benefit line-block">
+      <div class="benefit__inner container container--border">
+        <h2 class="benefit__title title">Мы&nbsp;будем полезны,&nbsp;если:</h2>
+        <ul class="benefit__list"></ul>
+      </div>
+    </section>
+    <section class="modal modal--consultation modal-consultation" id="modal-consultation">
+      <div class="modal__inner">
+        <h2 class="modal__title modal__title--consultation">Записаться на&nbsp;консультацию</h2>
+        <p class="modal__text modal__text--consultation">C вами свяжется дизайнер и&nbsp;ответит на&nbsp;все&nbsp; вопросы</p>
+        <form class="modal__form form-consultation">
+          <div class="form-consultation__block" action="" method="post">
+            <input class="form-consultation__input form-consultation__input-tel mask" id="form-consultation-tel" type="text" name="form-consultation-tel" placeholder="Ваш телефон" required>
+            <label class="form-consultation__label form-consultation__label-tel" for="form-consultation-tel"></label>
+          </div>
+          <button class="form-consultation__btn" type="submit">ОТПРАВИТЬ</button>
+          <div class="form-consultation__block">
+            <input class="form-consultation__input form-consultation__input-consent" id="form-consultation-consent" type="checkbox" checked name="form-consultation-consent">
+            <label class="form-consultation__label form-consultation__label-consent" for="form-consultation-consent">Отправляя заявку, я даю согласие на&nbsp;обработку персональных данных</label>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="modal modal--success modal-success" id="modal-success">
+      <div class="modal__inner">
+        <h2 class="modal__title modal__title--success">Заявка отправлена</h2>
+        <figure class="modal-success__img"></figure>
+        <p class="modal__text modal__text--success">Спасибо за обращение в наш салон.
+          <br>Мы перезвоним вам в ближайшее время.</p>
       </div>
     </section>
   </main>

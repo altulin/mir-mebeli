@@ -66,6 +66,13 @@
       top: 159px;
       max-width: 323px;
     }
+
+    @include mw($min-ph) {
+      // transform: none;
+      // width: calc(100% - 85px);
+      // left: 45px;
+      max-width: 271px;
+    }
   }
 
   &__title {
@@ -135,6 +142,10 @@
       @include mw($empty) {
         width: 70px;
       }
+
+      @include mw($min-ph) {
+        width: 43px;
+      }
     }
 
     @include mw($ldt) {
@@ -149,6 +160,10 @@
     @include mw($ph) {
       font-size: 16px;
     }
+
+    @include mw($min-ph) {
+      padding-left: 63px;
+    }
   }
 
   &__link {
@@ -160,6 +175,10 @@
     letter-spacing: -0.02em;
     padding-top: 17px;
     padding-bottom: 17px;
+    border: none;
+    @include btn-border-drawing($green-two, $text-dark, 2px, bottom, right);
+
+
 
     @include mw($ldt) {
       max-width: 273px;
@@ -179,12 +198,27 @@
       padding-bottom: 4px;
       font-size: 20px;
     }
+
+    @include mw($min-ph) {
+      max-width: none;
+    }
+
+    &::before,
+    &::after {
+      border-radius: 3px;
+    }
   }
 }
 
 .record-link {
 
-  &__icon {}
 
-  &__text {}
+  &__icon {
+    width: 90px;
+    height: 49px;
+    background-image: url(/img/svg/record-green.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
 }
