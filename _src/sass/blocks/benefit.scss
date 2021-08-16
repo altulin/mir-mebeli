@@ -1,22 +1,209 @@
 .benefit {
-  background-image: url(/img/svg/circle.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: calc((100vw - 1920px) / 2) 0;
+  overflow-x: hidden;
 
 
   &__inner {
-    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 43px;
+    position: relative;
+    padding-right: 39px;
 
+    @include mw($ldt) {
+      padding-right: 8px;
+    }
 
+    @include mw($dt) {
+      padding-right: 0;
+      padding-left: 35px;
+    }
+
+    @include mw($empty) {
+      flex-direction: column
+    }
   }
 
+  &__img {
+    @include centered(y);
+    height: 874px;
+    width: 874px;
+    border-radius: 50%;
+    border: 1px solid rgba(64, 90, 38, 0.3);
+    left: -437px;
+
+    @media (max-width: 1717px) {
+      left: -500px;
+    }
+
+    @include mw($ldt) {
+      width: 783px;
+      height: 100%;
+      max-height: 100%;
+      left: -434px;
+    }
+
+    @include mw($dt) {
+      width: 706px;
+    }
+  }
+
+  &__title {
+    font-size: 60px;
+    line-height: 66px;
+    margin-top: 188px;
+    max-width: 306px;
+    margin-left: 27px;
+
+    @include mw($ldt) {
+      font-size: 50px;
+      margin-left: 0;
+      margin-top: 172px;
+      line-height: 56px;
+      max-width: 250px;
+    }
+
+    @include mw($dt) {
+      font-size: 40px;
+      line-height: 47px;
+      max-width: 208px;
+    }
+
+    @include mw($empty) {
+      max-width: none;
+      width: 100%;
+      text-align: center;
+      margin-top: 122px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 989px;
+
+    @include mw($ldt) {
+      max-width: 892px;
+    }
+
+    @include mw($dt) {
+      max-width: 794px;
+    }
+  }
+
+  &__item {
+    width: 50%;
+    padding-left: 211px;
+    padding-right: 20px;
+    position: relative;
+    padding-top: 33px;
+    padding-bottom: 33px;
+
+    &:nth-child(2),
+    &:nth-child(1) {
+      padding-top: 174px;
+
+      @include mw($ldt) {
+        padding-top: 156px;
+      }
+
+      @include mw($dt) {
+        padding-top: 137px;
+      }
+    }
+
+    &:nth-child(5),
+    &:nth-child(6) {
+      padding-bottom: 150px;
+
+      @include mw($dt) {
+        padding-bottom: 79px;
+        padding-top: 42px;
+      }
 
 
+    }
+
+    @include mw($ldt) {
+      padding-left: 183px;
+      padding-bottom: 0;
+      padding-top: 30px;
+
+      &:nth-child(4) .benefit-item__box {
+        padding-top: 23px;
+      }
+    }
+
+    @include mw($dt) {
+      padding-left: 147px;
+      padding-top: 9px;
+    }
+
+    @include mw($empty) {
+      width: 100%;
+      padding-left: 132px;
+      padding-right: 0;
+      padding-top: 53px;
+
+      &:nth-child(1) {
+        padding-top: 0;
+      }
+
+      &:nth-child(2) {
+        padding-top: 73px;
+      }
+
+      &:nth-child(5),
+      &:nth-child(6) {
+        padding-top: 46px;
+      }
+
+
+
+
+    }
+
+    // &:nth-child(2),
+    // &:nth-child(1) {
+    //   padding-top: 174px;
+
+    //   @include mw($ldt) {
+    //     padding-top: 156px;
+    //   }
+
+    //   @include mw($dt) {
+    //     padding-top: 137px;
+    //   }
+    // }
+
+    // &:nth-child(5),
+    // &:nth-child(6) {
+    //   padding-bottom: 150px;
+
+    //   @include mw($dt) {
+    //     padding-bottom: 79px;
+    //     padding-top: 42px;
+    //   }
+
+
+    // }
+
+    &--even {
+      border-left: 1px solid rgba(64, 90, 38, 0.2);
+
+      @include mw($empty) {
+        border-left: none;
+      }
+
+    }
+
+  }
 }
 
 .line-block {
   position: relative;
+  padding-right: 96px;
+  padding-left: 96px;
 
   &::before,
   &::after {
@@ -31,16 +218,49 @@
 
   &::before {
     top: 73px;
+
+    @include mw($dt) {
+      top: 69px;
+    }
   }
 
   &::after {
     bottom: 73px;
+
+    @include mw($dt) {
+      bottom: 69px;
+    }
+  }
+
+  @include mw(1263px) {
+    padding-left: 68px;
+    padding-right: 68px;
+  }
+
+  @include mw($dt) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @include mw($empty) {
+    padding-left: 123px;
+    padding-right: 123px;
   }
 }
 
 .container {
+
   &--border {
     position: relative;
+
+    @include mw($dt) {
+      max-width: 1063px;
+    }
+
+    @include mw($empty) {
+      padding-left: 80px;
+      padding-right: 80px;
+    }
 
     &::before,
     &::after {
@@ -62,5 +282,192 @@
 
 
   }
+}
 
+.title {
+  color: #36544F;
+  font-weight: 600;
+
+  &__all {
+    font-size: 55px;
+  }
+
+
+}
+
+.benefit-item {
+  display: flex;
+
+
+
+
+  &__img {
+    flex-shrink: 0;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: contain;
+    @include centered(y);
+    left: 16px;
+
+    @include mw($ldt) {
+      left: 27px;
+    }
+
+    @include mw($dt) {
+      left: 9px;
+    }
+
+    &--1 {
+      width: 160px;
+      height: 164px;
+      background-image: url(/img/benefit-1.png);
+      transform: none;
+      top: 150px;
+
+      @include mw($ldt) {
+        width: 133px;
+        height: 138px;
+        transform: none;
+        top: 137px;
+      }
+
+      @include mw($dt) {
+        width: 122px;
+        height: 125px;
+        top: 117px;
+      }
+    }
+
+    &--2 {
+      width: 164px;
+      height: 176px;
+      background-image: url(/img/benefit-2.png);
+      transform: none;
+      top: 150px;
+
+      @include mw($ldt) {
+        width: 134px;
+        height: 145px;
+        transform: none;
+        top: 140px;
+      }
+
+      @include mw($dt) {
+        width: 122px;
+        height: 125px;
+        top: 117px;
+      }
+    }
+
+
+
+    &--3 {
+      width: 152px;
+      height: 169px;
+      background-image: url(/img/benefit-3.png);
+
+      @include mw($ldt) {
+        width: 126px;
+        height: 139px;
+        transform: none;
+        top: 29px;
+      }
+
+      @include mw($dt) {
+        width: 122px;
+        height: 125px;
+        top: 10px;
+      }
+    }
+
+    &--4 {
+      width: 143px;
+      height: 156px;
+      background-image: url(/img/benefit-4.png);
+
+      @include mw($ldt) {
+        width: 118px;
+        height: 129px;
+        transform: none;
+        top: 44px;
+      }
+
+      @include mw($dt) {
+        width: 122px;
+        height: 125px;
+        top: 10px;
+      }
+    }
+
+    &--5 {
+      width: 152px;
+      height: 152px;
+      background-image: url(/img/benefit-5.png);
+      top: auto;
+      transform: none;
+      bottom: 140px;
+
+      @include mw($ldt) {
+        width: 127px;
+        height: 127px;
+        transform: none;
+        top: 44px;
+      }
+
+      @include mw($dt) {
+        width: 122px;
+        height: 125px;
+        top: 40px;
+      }
+    }
+
+    &--6 {
+      width: 154px;
+      height: 154px;
+      background-image: url(/img/benefit-6.png);
+      top: auto;
+      transform: none;
+      bottom: 140px;
+
+      @include mw($ldt) {
+        width: 127px;
+        height: 127px;
+        transform: none;
+        top: 30px;
+      }
+
+      @include mw($dt) {
+        width: 122px;
+        height: 125px;
+        top: 29px;
+      }
+    }
+  }
+
+
+
+  &__title {
+    color: $green-two;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-bottom: 11px;
+
+    @include mw($ldt) {
+      font-size: 18px;
+    }
+  }
+
+  &__text {
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    color: $text-dark;
+
+    @include mw($ldt) {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
 }

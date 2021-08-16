@@ -15,18 +15,31 @@ block content
         br
         | для&nbsp;комфорта вашей жизни
       .promo__slogan.promo-slogan
-        p.promo-slogan__text Стоимость консультации вернется в ваш дом мебелью
+        p.promo-slogan__text Стоимость консультации вернется в&nbsp;ваш&nbsp;дом мебелью
 
       a.promo-slogan__link.record-link.open-modal-consultation(href="#")
-        //- +svg('record', '90', '49', 'record-link')
         span.record-link__icon
         span.record-link__text Записаться
 
   section.benefit.line-block
     .benefit__inner.container.container--border
+      figure.benefit__img
 
-      h2.benefit__title.title Мы&nbsp;будем полезны,&nbsp;если:
+      h2.benefit__title.title Мы будем полезны, если:
       ul.benefit__list
+        each item, n in benefit_list
+          li.benefit__item.benefit-item(class= n%2!==0?'benefit__item--even':'')
+            figure.benefit-item__img(class= `benefit-item__img--${n+1}`)
+            .benefit-item__box
+              if n===5
+                h3.benefit-item__title Мечтаете об&nbsp;инстаграмном
+                  br
+                  | доме
+
+              else
+                h3.benefit-item__title= item[0]
+              p.benefit-item__text= item[1]
+
 
 
 
