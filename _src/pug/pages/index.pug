@@ -28,7 +28,7 @@ block content
       h2.benefit__title.title Мы будем полезны, если:
       ul.benefit__list
         each item, n in benefit_list
-          li.benefit__item.benefit-item(class= n%2!==0?'benefit__item--even':'')
+          li.benefit__item.benefit-item(class= n%2!==0?'benefit__item--even':'' class= `benefit__item--${n+1}`)
             figure.benefit-item__img(class= `benefit-item__img--${n+1}`)
             .benefit-item__box
               if n===5

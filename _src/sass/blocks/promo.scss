@@ -18,7 +18,7 @@
   }
 
   @include mw($tb) {
-    padding-top: 107%;
+    padding-top: 106%;
     margin-top: -143px;
   }
 
@@ -63,6 +63,7 @@
 
     @include mw($empty) {
       max-width: 367px;
+      top: 165px;
     }
 
     @include mw($ph) {
