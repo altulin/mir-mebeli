@@ -18,18 +18,35 @@ mixin img(name, type, alt, className, width, height)
 
 //- +img-retina(``, ``, ``, ``, ``, ``)
 mixin img-retina(name, type, alt, className, width, height, ...args)
+
+
+
   if args.length > 0
     picture
 
       each item in args
-        source(media=`(max-width: ${item}px)` srcset=`/img/${name}-${item}.${type} 1x, /img/${name}-${item}@2x.${type} 2x`)
+        source(media=`(max-width: ${item}px)` data-srcset=`/img/${name}-${item}.${type} 1x, /img/${name}-${item}@2x.${type} 2x`)
 
-      img(class=`${className}` src=`/img/${name}.${type}` srcset=`/img/${name}.${type} 1x, /img/${name}@2x.${type} 2x` alt=alt width=width height=height loading="lazy")
+      img.lazyload(class=`${className}` data-src=`/img/${name}.${type}` data-srcset=`/img/${name}.${type} 1x, /img/${name}@2x.${type} 2x` alt=alt width=width height=height loading="lazy")
+
+  else
+
+    img.lazyload(class=`${className}` data-src=`/img/${name}.${type}` data-srcset=`/img/${name}.${type} 1x, /img/${name}@2x.${type} 2x` alt=alt width=width height=height loading="lazy")
+
+
+//- mixin img-retina-swiper-lazy(name, type, alt, className, width, height, ...args)
+  if args.length > 0
+    picture
+
+      each item in args
+        source(media=`(max-width: ${item}px)` data-srcset=`/img/${name}-${item}.${type} 1x, /img/${name}-${item}@2x.${type} 2x`)
+
+      img.swiper-lazy(class=`${className}` data-src=`/img/${name}.${type}` data-srcset=`/img/${name}.${type} 1x, /img/${name}@2x.${type} 2x` alt=alt width=width height=height loading="lazy")
 
 
   else
 
-    img(class=`${className}` src=`/img/${name}.${type}` srcset=`/img/${name}.${type} 1x, /img/${name}@2x.${type} 2x` alt=alt width=width height=height loading="lazy")
+    img.swiper-lazy(class=`${className}` data-src=`/img/${name}.${type}` srcset=`/img/${name}.${type} 1x, /img/${name}@2x.${type} 2x` alt=alt width=width height=height loading="lazy")
 
 
 //- +img-svg(``, ``, ``, ``, ``, ``)

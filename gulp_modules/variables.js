@@ -13,6 +13,8 @@ const plugunsJsUsed = [
   `mmenu_js`,
   `jquery_modal_js`,
   `inputmask_js`,
+  `swiper_js`,
+  `lazysizes_js`,
   `myJsLibs`,
   `myJsFile`,
 ];
@@ -20,6 +22,7 @@ const plugunsCssUsed = [
   `normalize_css`,
   `mmenu_css`,
   `jquery_modal_css`,
+  `swiper_css`,
   `myCssLibs`,
   `myCssFile`,
 ];
@@ -31,6 +34,7 @@ const plugunsJs = new Map([
   [`mmenu_js`, `node_modules/mmenu-light/dist/mmenu-light.js`],
   [`slick_js`, `node_modules/slick-carousel/slick/slick.min.js`],
   [`inputmask_js`, `node_modules/inputmask/dist/jquery.inputmask.min.js`],
+  [`lazysizes_js`, `node_modules/lazysizes/lazysizes.min.js`],
   [
     `jquery_formstyler_js`,
     `node_modules/jquery-form-styler/dist/jquery.formstyler.min.js`,

@@ -40,6 +40,85 @@ block content
                 h3.benefit-item__title= item[0]
               p.benefit-item__text= item[1]
 
+  section.consultation
+    .consultation__inner
+
+      .consultation__top.cons-top.line-block
+        .cons-top__img-wrap
+          +img-retina(`cons-bg`, `jpg`,``,`cons-top__img`, `1920`,`969`,360, 412, 768, 1200, 1440)
+
+
+
+        .cons-top__inner.container.container--border
+
+          .consultation__title-block.t-block
+            .t-block__top
+              span.t-block__num 01
+              span.t-block__text.t-block__text--top  Консультация
+            p.t-block__text.t-block__text--bottom дизайнера интерьера
+
+
+
+
+          .cons-top__wrapper
+            .cons-top__left
+              ul.cons-top__list
+                each item,n in cons_top
+                  li.cons-top__item.cons-top-item
+                    figure.cons-top-item__img(class= `cons-top-item__img--${n+1}`)
+                    p.cons-top-item__text= item
+            .cons-top__right
+              .cons-top__plus.plus
+                .plus__top
+                  p.plus__price стоимость консультации
+                  p.plus__price-val
+
+                .plus__bottom
+                  figure.plus__img
+                  p.plus__bonus бонус
+                  p.plus__text на покупку мебели
+
+
+
+
+      .consultation__slider.slider
+        .slider__inner
+          .slider__left.swiper-container
+
+            .slider__wrapper.swiper-wrapper
+              while n < 7
+                -n++
+                .slider__item.swiper-slide
+                  +img-retina(`slider-bg-${n}`, `jpg`,``,`slider__img`, `961`,`641`)
+                  //- .swiper-lazy-preloader.swiper-lazy-preloader-white
+
+
+              -n=0
+
+
+          .slider__right
+            .slider__box
+              p.slider__slogan
+              .slider__control
+                .slider__pagination.swiper-pagination
+
+                .swiper-button-prev.slider__prev
+                .swiper-button-next.slider__next
+
+
+
+      .consultation__bottom.how
+        .how__inner
+          .how__box
+            h3.how__title Как проходит работа
+            ul.how__list
+              each item,i in how
+                li.how__item
+                  span.how__num= `0${i+1}`
+                  p.how__text= item
+
+
+
 
 
 

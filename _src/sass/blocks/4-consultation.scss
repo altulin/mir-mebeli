@@ -1,0 +1,223 @@
+.consultation {
+
+  &__inner {}
+
+  &__top {}
+
+  &__title-block {}
+
+  &__number {}
+
+  &__title {}
+
+  &__slider {}
+
+  &__bottom {}
+}
+
+.line-block {}
+
+.cons-top {
+  width: 100%;
+  padding-top: 50%;
+  position: relative;
+
+
+  &__img-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+
+  }
+
+  &__img {}
+
+  &__inner {
+    @include centered(x);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    padding-right: 26px;
+
+  }
+
+  &__wrapper {
+    max-width: 1354px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__left {}
+
+  &__list {}
+
+  &__item {}
+
+  &__right {}
+
+  &__plus {}
+}
+
+.container {
+
+  &--border {}
+}
+
+.number {
+  font-weight: 300;
+  font-size: 55px;
+  line-height: 55px;
+  color: #708C5C;
+
+}
+
+.consultation {
+
+  &__title-block {
+    margin-top: 172px;
+    margin-left: 21px;
+    margin-bottom: 82px;
+  }
+}
+
+.t-block {
+
+  &__top {
+    display: flex;
+    align-items: center;
+  }
+
+  &__num {
+    font-weight: 300;
+    font-size: 55px;
+    line-height: 55px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #708C5C;
+    margin-right: 26px;
+  }
+
+  &__text {
+    font-weight: 600;
+    font-size: 55px;
+    line-height: 1;
+    color: #FFFFFF;
+
+    &--top {}
+
+    &--bottom {
+      margin-left: 47px;
+    }
+
+  }
+
+
+}
+
+
+.title {
+
+  &--usual {}
+
+  &--white {
+    color: $white;
+  }
+}
+
+.cons-top-item {
+  display: flex;
+
+  &__img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+
+    &--1 {}
+
+    &--2 {}
+
+    &--3 {}
+
+    &--4 {}
+
+    &--5 {}
+  }
+
+  &__text {}
+}
+
+.plus {
+
+  &__top {}
+
+  &__price {}
+
+  &__price-val {}
+
+  &__bottom {}
+
+  &__img {}
+
+  &__bonus {}
+
+  &__text {}
+}
+
+.slider {
+
+  &__inner {}
+
+  &__left {}
+
+  &__wrapper {}
+
+  &__item {}
+
+  &__img {}
+
+  &__right {}
+
+  &__box {}
+
+  &__slogan {}
+
+  &__control {}
+
+  &__pagination {}
+
+  &__prev {}
+
+  &__next {}
+}
+
+.swiper-container {}
+
+.swiper-wrapper {}
+
+.swiper-slide {}
+
+.swiper-pagination {}
+
+.swiper-button-prev {}
+
+.swiper-button-next {}
+
+.how {
+
+  &__inner {}
+
+  &__box {}
+
+  &__title {}
+
+  &__list {}
+
+  &__item {}
+
+  &__num {}
+
+  &__text {}
+}

@@ -122,6 +122,36 @@ const getInputMask = () => {
   }
 };
 
+const getConsultationSlider = () => {
+  const slider = $(".slider__left");
+
+  if (check(slider)) {
+    const swiper = new Swiper(".slider__left", {
+      // Optional parameters
+      // direction: "vertical",
+      loop: true,
+      // preloadImages: false,
+      // lazy: true,
+
+      // If we need pagination
+      pagination: {
+        // el: ".swiper-pagination",
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+
+      // And if we need scrollbar
+      scrollbar: {
+        // el: ".swiper-scrollbar",
+      },
+    });
+  }
+};
+
 $(function () {
   reload();
   getAccordionNav();
@@ -130,4 +160,5 @@ $(function () {
   getConsultationModal();
   sendFormConsultation();
   getInputMask();
+  getConsultationSlider();
 });
