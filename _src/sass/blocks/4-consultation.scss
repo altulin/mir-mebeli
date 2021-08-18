@@ -19,8 +19,24 @@
 
 .cons-top {
   width: 100%;
-  padding-top: 50%;
+  padding-top: 50.5%;
   position: relative;
+
+  @include mw($ldt) {
+    padding-top: 67%;
+  }
+
+  @include mw($dt) {
+    padding-top: 80.3%;
+  }
+
+  @include mw($empty) {
+    padding-top: 0;
+    // background-image: linear-gradient(174.91deg, #272622 -21.51%, #24231F 73.29%, rgba(34, 33, 29, 0) 89.06%);
+    ;
+    padding-bottom: 463px;
+    overflow: hidden;
+  }
 
 
   &__img-wrap {
@@ -30,9 +46,28 @@
     left: 0;
     top: 0;
 
+    @include mw($empty) {
+      // height: auto;
+      // top: auto;
+      // bottom: 0;
+    }
+
+    @include mw($tb) {
+      width: 768px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @include mw($ph) {
+      width: 412px;
+    }
+
   }
 
-  &__img {}
+  &__img {
+    height: 100%;
+    width: 100%;
+  }
 
   &__inner {
     @include centered(x);
@@ -40,23 +75,128 @@
     height: 100%;
     top: 0;
     padding-right: 26px;
+    padding-left: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include mw(1651px) {
+      width: calc(100% - 192px);
+    }
+
+    @include mw($ldt) {
+      padding-left: 8px;
+      top: 8px;
+      padding-right: 0;
+    }
+
+    @include mw(1263px) {
+      width: calc(100% - 136px);
+    }
+
+    @include mw($dt) {
+      top: 0;
+      padding-left: 21px;
+      padding-right: 21px;
+      width: calc(100% - 40px);
+    }
+
+    @include mw($empty) {
+      max-width: 100%;
+      max-width: 522px;
+      position: relative;
+      transform: none;
+      left: auto;
+      top: auto;
+      align-items: center;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 128px;
+    }
+
+    @include mw($ph) {
+      padding-left: 5px;
+      padding-right: 5px;
+      padding-top: 97px;
+    }
 
   }
 
   &__wrapper {
-    max-width: 1354px;
+    width: 100%;
+    max-width: 1378px;
     display: flex;
     margin-left: auto;
     margin-right: auto;
+    padding-right: 22px;
+    justify-content: space-between;
+
+    @include mw($ldt) {
+      padding-right: 10px;
+      padding-left: 10px;
+      max-width: 1182px;
+    }
+
+    @include mw($dt) {
+      padding-left: 0;
+      padding-right: 0;
+      max-width: 971px;
+    }
+
+    @include mw($empty) {
+      flex-direction: column;
+      max-width: none;
+      max-width: 409px;
+      padding-left: 15px;
+    }
+
+    @include mw(600px) {
+      padding-left: 0;
+
+    }
   }
 
-  &__left {}
+  &__left {
+    max-width: 604px;
+    width: 100%;
+    padding-top: 33px;
+
+    @include mw($ldt) {
+      max-width: 458px;
+      padding-top: 16px;
+      padding-left: 9px;
+    }
+
+    @include mw($dt) {
+      padding-left: 0;
+      padding-top: 0;
+      max-width: 445px;
+    }
+
+    @include mw($empty) {
+      max-width: none;
+      margin-bottom: 82px;
+    }
+
+
+  }
 
   &__list {}
 
   &__item {}
 
-  &__right {}
+  &__right {
+
+    @include mw($dt) {
+      padding-top: 36px;
+    }
+
+    @include mw($empty) {
+      padding-top: 0;
+      max-width: 382px;
+
+    }
+  }
 
   &__plus {}
 }
@@ -77,9 +217,26 @@
 .consultation {
 
   &__title-block {
-    margin-top: 172px;
-    margin-left: 21px;
-    margin-bottom: 82px;
+    margin-top: 20px;
+    margin-bottom: 58px;
+
+    @include mw($ldt) {
+      margin-top: 0;
+      margin-bottom: 71px;
+    }
+
+    @include mw($dt) {
+      margin-bottom: 76px;
+    }
+
+    @include mw($empty) {
+      max-width: 409px;
+      margin-bottom: 57px;
+    }
+
+    @include mw($ph) {
+      margin-bottom: 51px;
+    }
   }
 }
 
@@ -93,11 +250,25 @@
   &__num {
     font-weight: 300;
     font-size: 55px;
-    line-height: 55px;
+    line-height: 1;
     letter-spacing: -0.02em;
     text-transform: uppercase;
     color: #708C5C;
     margin-right: 26px;
+
+    @include mw($ldt) {
+      font-size: 50px;
+      margin-right: 29px;
+    }
+
+    @include mw($dt) {
+      font-size: 45px;
+      margin-right: 20px;
+    }
+
+    @include mw($ph) {
+      font-size: 39px;
+    }
   }
 
   &__text {
@@ -106,10 +277,42 @@
     line-height: 1;
     color: #FFFFFF;
 
+    @include mw($ldt) {
+      font-size: 50px;
+      line-height: 55px;
+    }
+
+    @include mw($dt) {
+      font-size: 45px;
+      line-height: 1;
+    }
+
+    @include mw($empty) {
+      line-height: 48px;
+
+    }
+
+    @include mw(600px) {
+      font-size: 37px;
+      line-height: 40px;
+    }
+
     &--top {}
 
     &--bottom {
       margin-left: 47px;
+
+      @include mw($dt) {
+        margin-left: 30px;
+      }
+
+      @include mw($empty) {
+        margin-left: 62px;
+      }
+
+      @include mw($ph) {
+        margin-left: 59px;
+      }
     }
 
   }
@@ -129,41 +332,237 @@
 
 .cons-top-item {
   display: flex;
+  justify-content: space-between;
 
-  &__img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-
-    &--1 {}
-
-    &--2 {}
-
-    &--3 {}
-
-    &--4 {}
-
-    &--5 {}
+  @include mw($empty) {
+    padding-right: 11px;
   }
 
-  &__text {}
+  &+li {
+    margin-top: 40px;
+
+    @include mw($ldt) {
+      margin-top: 33px;
+    }
+  }
+
+  &__img {
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    flex-shrink: 0;
+
+    &--1 {
+      background-image: url(/img/svg/cons-1.svg);
+    }
+
+    &--2 {
+      background-image: url(/img/svg/cons-2.svg);
+    }
+
+    &--3 {
+      background-image: url(/img/svg/cons-3.svg);
+    }
+
+    &--4 {
+      background-image: url(/img/svg/cons-4.svg);
+    }
+
+    &--5 {
+      background-image: url(/img/svg/cons-5.svg);
+    }
+  }
+
+  &__text {
+    font-size: 22px;
+    line-height: 26px;
+    color: $white;
+    max-width: 499px;
+    width: 100%;
+    margin-left: 20px;
+
+    @include mw($ldt) {
+      margin-left: 55px;
+    }
+
+    @include mw($empty) {
+      margin-left: 45px;
+    }
+
+    @include mw($ph) {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
 }
 
 .plus {
 
-  &__top {}
+  &__top {
+    display: flex;
+    align-items: center;
 
-  &__price {}
+    @include mw($empty) {
+      background-image: linear-gradient(0deg, #E6E7E2, #E6E7E2);
+      align-items: center;
+      margin-bottom: 67px;
 
-  &__price-val {}
+    }
+  }
 
-  &__bottom {}
+  &__price {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 24px;
+    text-transform: uppercase;
+    background-image: linear-gradient(0deg, #E6E7E2, #E6E7E2);
+    padding: 8px 10px;
 
-  &__img {}
+    @include mw($dt) {
+      font-size: 22px;
+    }
 
-  &__bonus {}
+    @include mw($empty) {
+      font-size: 19px;
+      position: relative;
+      padding-left: 13px;
 
-  &__text {}
+      &::after {
+        content: "";
+        @include centered(y);
+        height: 35px;
+        width: 1px;
+        background-color: #34443F;
+        right: -16px;
+      }
+
+    }
+
+    @include mw(600px) {
+      font-size: 18px;
+    }
+
+  }
+
+  &__price-val {
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: $white;
+    margin-left: 25px;
+    align-self: flex-end;
+
+    @include mw($dt) {
+      font-size: 46px;
+      margin-left: 29px;
+    }
+
+    @include mw($empty) {
+      font-size: 35px;
+      color: #34443F;
+      align-self: center;
+      margin-left: 40px;
+    }
+
+    @include mw(600px) {
+      font-size: 33px;
+      margin-left: 33px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    padding-left: 35px;
+    padding-top: 34px;
+    position: relative;
+
+    @include mw($ldt) {
+      padding-left: 27px;
+      padding-top: 29px;
+    }
+
+    @include mw($dt) {
+      padding-top: 25px;
+    }
+
+    @include mw($empty) {
+      flex-direction: column;
+      padding-top: 0;
+      padding-left: 0;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    left: -59px;
+    top: 0;
+    width: 59px;
+    height: 59px;
+    background-image: url(/img/svg/plus.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include mw($ldt) {
+      top: -5px;
+      left: -63px;
+    }
+
+    @include mw($dt) {
+      width: 49px;
+      height: 49px;
+      top: -1px;
+      left: -51px;
+    }
+
+    @include mw($empty) {
+      top: -2px;
+      left: 13px;
+    }
+  }
+
+  &__bonus {
+    font-weight: 300;
+    font-size: 54px;
+    line-height: 1;
+    color: $white;
+    text-transform: uppercase;
+    @include font("MyriadPro");
+    letter-spacing: -4px;
+
+    @include mw($dt) {
+      font-size: 50px;
+
+    }
+
+    @include mw($empty) {
+      margin-bottom: 13px;
+      padding-left: 97px;
+    }
+  }
+
+  &__text {
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 1;
+    color: #E3C867;
+    max-width: 163px;
+    margin-left: 29px;
+
+    @include mw($dt) {
+      font-size: 24px;
+      margin-left: 25px;
+      margin-top: 1px;
+    }
+
+    @include mw($empty) {
+      margin-left: 0;
+      max-width: none;
+      font-size: 22px;
+      margin-left: 10px;
+    }
+  }
 }
 
 .slider {

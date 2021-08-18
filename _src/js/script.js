@@ -491,7 +491,7 @@ const getConsultationSlider = () => {
 };
 
 $(function () {
-  reload();
+  // reload();
   getAccordionNav();
   getDropDown();
   getMenuMobile();
