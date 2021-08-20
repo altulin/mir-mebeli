@@ -473,7 +473,9 @@ const getConsultationSlider = () => {
 
       // If we need pagination
       pagination: {
-        // el: ".swiper-pagination",
+        el: ".slider__pagination",
+        bulletClass: "slider__bullet",
+        clickable: true,
       },
 
       // Navigation arrows

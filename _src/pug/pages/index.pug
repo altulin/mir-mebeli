@@ -83,12 +83,12 @@ block content
 
 
 
-      //- .consultation__slider.slider
+      .consultation__slider.slider
         .slider__inner
           .slider__left.swiper-container
 
             .slider__wrapper.swiper-wrapper
-              while n < 7
+              while n < 5
                 -n++
                 .slider__item.swiper-slide
                   +img-retina(`slider-bg-${n}`, `jpg`,``,`slider__img`, `961`,`641`)
@@ -100,7 +100,11 @@ block content
 
           .slider__right
             .slider__box
-              p.slider__slogan
+              p.slider__slogan Мы поможем создать
+                br
+                | интерьер, в котором
+                br
+                | вам захочется жить.
               .slider__control
                 .slider__pagination.swiper-pagination
 
@@ -109,10 +113,10 @@ block content
 
 
 
-      //- .consultation__bottom.how
-        .how__inner
+      .consultation__bottom.how
+        .how__inner.container
           .how__box
-            h3.how__title Как проходит работа
+            h3.how__title.title.title--all Как проходит работа
             ul.how__list
               each item,i in how
                 li.how__item
