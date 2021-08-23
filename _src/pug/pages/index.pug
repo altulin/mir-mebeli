@@ -92,7 +92,6 @@ block content
                 -n++
                 .slider__item.swiper-slide
                   +img-retina(`slider-bg-${n}`, `jpg`,``,`slider__img`, `961`,`641`)
-                  //- .swiper-lazy-preloader.swiper-lazy-preloader-white
 
 
               -n=0
@@ -118,10 +117,78 @@ block content
           .how__box
             h3.how__title.title.title--all Как проходит работа
             ul.how__list
-              each item,i in how
-                li.how__item
-                  span.how__num= `0${i+1}`
-                  p.how__text= item
+
+              li.how__item
+                span.how__num 01
+                p.how__text Вы отправляете фотографии комнат, пожелания, стилевые предпочтения, ритм жизни семьи
+
+              li.how__item
+                span.how__num 02
+                p.how__text Мы создаем концепцию - коллаж с подобранными элементами интерьера, которые будут гармонично вписываться&ensp;
+                  span.how__text-ldt-hidden в ваш
+                  span.how__text-ldt-visual к вам в
+                  | &ensp;дом
+
+              li.how__item
+                span.how__num 03
+                p.how__text Подберем несколько вариантов мебели для преображения вашего интерьера
+
+              li.how__item
+                span.how__num 04
+                p.how__text Презентуем подготовленные предложения и ответим на&nbsp;все ваши вопросы&nbsp;лично в&nbsp;офисе или онлайн в&nbsp;Zoom
+
+              li.how__item
+                span.how__num 05
+                p.how__text Высылаем все согласованные материалы и видеозапись презентации, если она проходила в режиме онлайн
+
+
+  include ../modules/_form.pug
+
+
+  section.projects.line-block
+    .projects__inner.container.container--border
+      h2.projects__title.title.title--all.title--dark Выполненные
+        br
+        | проекты
+      .projects__slider.projects-slider.swiper-container
+
+        .projects-slider__wrapper.swiper-wrapper
+          while n < 5
+            -n++
+            .projects-slider__item.swiper-slide
+              ul.projects-slider__left.projects-info
+                li.projects-info__item
+                  span.projects-info__term Объект
+                  span.projects-info__desc Квартира, кухня-гостиная 25 м2
+
+                li.projects-info__item
+                  span.projects-info__term Задача
+                  span.projects-info__desc Организация кухни-гостиной для&nbsp;молодой девушки
+
+                li.projects-info__item
+                  span.projects-info__term Решение
+                  span.projects-info__desc Перепланировка квартиры с учетом присоединения зоны кухни к гостиной. Предложено стилевое и цветовое решение. Осуществлен подбор материалов, даны рекомендации по&nbsp;освещению.
+
+
+              .projects-slider__right
+                figure.projects-slider__img-wrap
+                  +img-retina(`projects-slider`, `jpg`,``,`projects-slider__img`, `914`,`647`, 1200)
+          -n=0
+
+        .projects__control
+          .projects__pagination
+
+          .projects__prev
+          .projects__next
+
+
+      a.projects__link.open-modal-consultation(href="#") Мне нужна консультация
+
+  //- include ../modules/_form.pug
+
+
+
+
 
 
 
@@ -139,7 +206,7 @@ block content
 
       form.modal__form.form-consultation
         .form-consultation__block(action="" method="post")
-          input.form-consultation__input.form-consultation__input-tel#form-consultation-tel.mask(type="text" name="form-consultation-tel" placeholder="Ваш телефон" required)
+          input.form-consultation__input.form-consultation__input-tel#form-consultation-tel.mask.reset(type="text" name="form-consultation-tel" placeholder="Ваш телефон" required)
           label.form-consultation__label.form-consultation__label-tel(for="form-consultation-tel")
 
         button.form-consultation__btn(type="submit") ОТПРАВИТЬ

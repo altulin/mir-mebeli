@@ -867,6 +867,7 @@
     transform: rotate(45deg);
     position: relative;
     transition: 0.3s;
+    cursor: pointer;
 
 
 
@@ -888,6 +889,7 @@
     border-color: rgba(#454547, 0.8);
     margin-left: 10px;
     margin-right: 10px;
+    cursor: auto;
 
     @include mw($ph) {
       width: 35px;
@@ -936,25 +938,37 @@
   }
 }
 
-.swiper-container {}
 
-.swiper-wrapper {}
-
-.swiper-slide {}
-
-.swiper-pagination {}
-
-.swiper-button-prev {}
-
-.swiper-button-next {}
 
 .how {
 
   &__inner {
     padding-top: 108px;
+    padding-bottom: 9%;
 
     @include mw($ldt) {
       padding-top: 112px;
+      padding-bottom: 10%;
+    }
+
+    @include mw($dt) {
+      padding-top: 102px;
+    }
+
+    @include mw($tb) {
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 117px;
+      padding-bottom: 15%;
+    }
+
+    @include mw($ph) {
+      padding-top: 78px;
+      padding-bottom: 20%;
+    }
+
+    @include mw($min-ph) {
+      padding-top: 58px;
     }
   }
 
@@ -963,6 +977,20 @@
 
     @include mw($ldt) {
       padding-left: 147px;
+      padding-right: 20px;
+    }
+
+    @include mw($dt) {
+      padding-left: 115px;
+    }
+
+    @include mw($tb) {
+      padding-left: 7px;
+      padding-right: 0;
+    }
+
+    @include mw($ph) {
+      padding-left: 0;
     }
   }
 
@@ -974,6 +1002,18 @@
     padding-left: 155px;
     position: relative;
 
+    @include mw($dt) {
+      padding-left: 126px;
+    }
+
+    @include mw($tb) {
+      padding-left: 0;
+    }
+
+    @include mw($ph) {
+      margin-left: 8%;
+    }
+
     &::after {
       content: "";
       position: absolute;
@@ -984,6 +1024,20 @@
       background-size: contain;
       left: 14px;
       bottom: -20px;
+
+      @include mw($tb) {
+        left: -91px;
+        bottom: 19px;
+      }
+
+      @include mw($ph) {
+        left: -49px;
+        bottom: 15px;
+      }
+
+      @include mw($min-ph) {
+        bottom: 36px;
+      }
     }
 
     &::before {
@@ -995,14 +1049,52 @@
       left: 44px;
       background-color: #405A26;
 
+      @include mw($tb) {
+        left: -61px;
+        height: 542px;
+        bottom: 48px;
+      }
+
+      @include mw($ph) {
+        left: -19px;
+        height: 676px;
+        bottom: 45px;
+      }
+
+      @include mw($min-ph) {
+        height: 786px;
+        bottom: 65px;
+      }
+
     }
   }
 
   &__item {
     display: flex;
 
+    @include mw($tb) {
+      justify-content: space-between;
+    }
+
+    @include mw($ph) {
+      justify-content: flex-start;
+    }
+
+
     &+li {
       margin-top: 31px;
+
+      @include mw($tb) {
+        margin-top: 22px;
+      }
+
+      @include mw($tb) {
+        // margin-top: 45px;
+      }
+
+      @include mw($ph) {
+        margin-top: 23px;
+      }
     }
   }
 
@@ -1014,6 +1106,7 @@
     color: #C0845E;
     display: block;
     width: 61px;
+    flex-shrink: 0;
   }
 
   &__text {
@@ -1022,8 +1115,46 @@
     line-height: 24px;
     color: #000000;
     width: 100%;
-    max-width: 860px;
+    max-width: 750px;
     margin-left: 23px;
+
+
+    @include mw($tb) {
+      font-size: 18px;
+      margin-left: 0;
+      max-width: 298px;
+      margin-left: 10px;
+      padding-right: 7px;
+    }
+
+    @include mw($ph) {
+      margin-left: 8%;
+      margin-right: 7px;
+      padding-right: 0;
+      max-width: 254px;
+    }
+
+    @include mw($min-ph) {
+      margin-left: 6%;
+      max-width: 222px;
+    }
+
+
+    &-ldt-hidden {
+      @include mw($ldt) {
+        display: none;
+      }
+    }
+
+    &-ldt-visual {
+      display: none;
+
+      @include mw($ldt) {
+        display: inline;
+      }
+    }
+
+
   }
 }
 
@@ -1035,6 +1166,26 @@
     @include mw($ldt) {
       font-size: 50px;
 
+    }
+
+    @include mw($dt) {
+      font-size: 45px;
+      line-height: 46px;
+    }
+
+    @include mw($tb) {
+      line-height: 50px;
+    }
+
+    @include mw($ph) {
+      font-size: 37px;
+      line-height: 40px;
+      padding-left: 33px;
+    }
+
+    @include mw($min-ph) {
+      font-size: 33px;
+      line-height: 34px;
     }
   }
 }

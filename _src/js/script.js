@@ -417,7 +417,8 @@ const getConsultationModal = () => {
   const link = $(".open-modal-consultation");
 
   if (check(modal)) {
-    link.on("click", () => {
+    link.on("click", (e) => {
+      e.preventDefault();
       createModal(modal);
     });
   }
@@ -446,6 +447,29 @@ const sendFormConsultation = () => {
         data,
         success(data) {
           getSuccessModal();
+          form.find(".reset").val("");
+        },
+      });
+    });
+  }
+};
+
+const sendFormRecord = () => {
+  const form = $(".record-form");
+
+  if (check(form)) {
+    form.on("submit", (e) => {
+      const data = $(this).serialize();
+
+      e.preventDefault();
+      $.ajax({
+        url: "https://httpbin.org/anything",
+        method: "post",
+        dataType: "json",
+        data,
+        success(data) {
+          getSuccessModal();
+          form.find(".reset").val("");
         },
       });
     });
@@ -465,13 +489,8 @@ const getConsultationSlider = () => {
 
   if (check(slider)) {
     const swiper = new Swiper(".slider__left", {
-      // Optional parameters
-      // direction: "vertical",
       loop: true,
-      // preloadImages: false,
-      // lazy: true,
 
-      // If we need pagination
       pagination: {
         el: ".slider__pagination",
         bulletClass: "slider__bullet",
@@ -483,11 +502,29 @@ const getConsultationSlider = () => {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
+    });
+  }
+};
 
-      // And if we need scrollbar
-      scrollbar: {
-        // el: ".swiper-scrollbar",
+const getProjectsSlider = () => {
+  const slider = $(".projects-slider");
+
+  if (check(slider)) {
+    const swiper = new Swiper(".projects-slider", {
+      loop: true,
+
+      pagination: {
+        el: ".projects__pagination",
+        bulletClass: "slider__bullet",
+        clickable: true,
       },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: ".projectsr__next",
+        prevEl: ".projects__prev",
+      },
+      spaceBetween: 10,
     });
   }
 };
@@ -499,8 +536,10 @@ $(function () {
   getMenuMobile();
   getConsultationModal();
   sendFormConsultation();
+  sendFormRecord();
   getInputMask();
   getConsultationSlider();
+  getProjectsSlider();
 });
 
 //# sourceMappingURL=script.js.map

@@ -1,0 +1,307 @@
+.record {
+
+  &__title {
+    @include vh();
+  }
+
+  &__inner {
+    position: relative;
+  }
+
+  &__img-wrap {
+    @include mw($tb) {
+      overflow: hidden;
+    }
+  }
+
+
+  &__img {
+    width: 100%;
+    display: block;
+
+    @include mw($tb) {
+      min-height: 640px;
+      width: auto;
+      max-width: none;
+    }
+
+    @include mw($ph) {
+      min-height: auto;
+      width: auto;
+      max-width: 100%;
+    }
+  }
+
+  &__form {
+    @include centered();
+    width: 100%;
+    max-width: 954px;
+
+    @include mw($dt) {
+      max-width: 845px;
+    }
+
+    @include mw($tb) {
+      top: 48%;
+    }
+
+
+
+    @include mw($min-ph) {
+      max-width: 286px;
+      @include centered(x);
+      top: 86px;
+    }
+  }
+}
+
+
+.record-form {
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mw($dt) {
+      margin-bottom: 18px;
+    }
+
+    @include mw($tb) {
+      font-size: 40px;
+      line-height: 48px;
+      max-width: 416px;
+      text-align: center;
+    }
+
+    @include mw($tb) {
+      font-size: 35px;
+      line-height: 40px;
+      padding-left: 0;
+    }
+
+    @include mw($min-ph) {
+      font-size: 30px;
+      line-height: 35px;
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+    line-height: 26px;
+    color: rgba($white, 0.9);
+    text-align: center;
+    margin-bottom: 63px;
+
+    @include mw($dt) {
+      font-size: 18px;
+      margin-bottom: 48px;
+    }
+
+    @include mw($tb) {
+      max-width: 262px;
+      margin-bottom: 45px;
+    }
+
+    @include mw($ph) {
+      line-height: 22px;
+      margin-bottom: 40px;
+    }
+
+    @include mw($min-ph) {
+      margin-bottom: 43px;
+    }
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    width: 100%;
+
+    @include mw($tb) {
+      max-width: 336px;
+      flex-direction: column;
+      padding: 0;
+    }
+
+    @include mw($ph) {
+      max-width: 320px;
+    }
+
+    @include mw($min-ph) {
+      max-width: 273px;
+    }
+
+
+    &+div {
+      margin-top: 24px;
+
+      @include mw($dt) {
+        margin-top: 40px;
+      }
+
+      @include mw($tb) {
+        margin-top: 30px;
+      }
+
+      @include mw($ph) {
+        margin-top: 22px;
+      }
+    }
+  }
+
+  &__input {
+
+    &--tel {
+      width: calc(50% - 10px);
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 20px;
+      color: #FFFFFF;
+      padding-top: 41px;
+      padding-left: 8.5%;
+      padding-bottom: 37px;
+      background-color: transparent;
+      border: 1px solid #FFFFFF;
+
+      @include mw($dt) {
+        padding-top: 32px;
+        padding-bottom: 32px;
+      }
+
+      @include mw($tb) {
+        width: 100%;
+        padding-top: 26px;
+        padding-bottom: 26px;
+        padding-left: 18%;
+      }
+
+      @include mw($ph) {
+        padding-top: 23px;
+        padding-bottom: 23px;
+      }
+
+      @include mw($min-ph) {
+        font-size: 18px;
+        line-height: 20px;
+        padding-left: 12%;
+        padding-bottom: 19px;
+      }
+
+      &::placeholder {
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 20px;
+        color: #FFFFFF;
+
+        @include mw($min-ph) {
+          font-size: 18px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+
+  &__label {
+    @include vh();
+  }
+
+  &__btn {
+    width: calc(50% - 10px);
+    font-size: 20px;
+    line-height: 20px;
+    color: $text-dark;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #fff;
+
+    @include hocus() {
+      background-color: rgba($white, 0.7)
+    }
+
+
+    @include mw($tb) {
+      width: 100%;
+      margin-top: 24px;
+      width: 100%;
+      padding-top: 26px;
+      padding-bottom: 26px;
+      padding-left: 18%;
+      text-align: left;
+    }
+
+    @include mw($ph) {
+      padding-left: 0;
+      text-align: center;
+    }
+
+    @include mw($min-ph) {
+      margin-top: 33px;
+      font-size: 18px;
+      line-height: 20px;
+      padding-top: 24px;
+      padding-bottom: 20px;
+    }
+  }
+}
+
+
+
+
+
+.personal-box {
+  width: auto;
+  padding-left: 0;
+  padding-right: 0;
+
+  @include mw($tb) {
+    max-width: 255px
+  }
+
+  &__input {
+    @include vh();
+
+    &:checked+label::before {
+      background-image: url(/img/svg/mark.svg);
+    }
+  }
+
+  &__label {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    color: $white;
+    padding-left: 40px;
+    position: relative;
+    display: block;
+
+    @include mw($dt) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    @include mw($tb) {
+      padding-left: 27px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      width: 11px;
+      height: 11px;
+      background-color: #ffffff;
+      left: 3px;
+      top: 3px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
