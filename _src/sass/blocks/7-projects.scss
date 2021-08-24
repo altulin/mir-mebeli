@@ -2,15 +2,22 @@
   min-height: 1253px;
   display: flex;
   flex-direction: column;
-  background-color: #FFF;
+  background-color: #F6F6F6;
   background-repeat: no-repeat;
-  background-image: url(/img/svg/sofa.svg), url(/img/svg/circle.svg);
-  background-position: 0 50%, 140% 0;
-  background-size: auto, 56% auto;
+  background-image: url(/img/svg/sofa.svg),
+    url(/img/svg/circle.svg);
+  background-position: 0 50%,
+    140% 0;
+  background-size: auto,
+    56% auto;
 
   &::after,
   &::before {
     content: none;
+
+    @include mw($empty) {
+      content: "";
+    }
   }
 
   @include mw($ldt) {
@@ -18,14 +25,16 @@
     min-height: 1148px;
     background-position: 0 63%, 342% 0;
     background-size: 30%, 77% auto;
+    background-color: #fff;
   }
 
-  @include mw($dt) {
+  @include mw($empty) {
     padding-left: 0;
-    min-height: 1011px;
-
   }
 
+  @include mw($tb) {
+    background-image: none;
+  }
 
   &__inner {
     flex-grow: 1;
@@ -36,49 +45,118 @@
 
     @include mw($ldt) {
       padding-right: 0;
-
-      &::after {
-        content: none;
-      }
+      padding-left: 54px;
     }
 
     @include mw($dt) {
       padding-top: 100px;
-      padding-left: 34px;
-      max-width: none;
-      margin-left: 67px;
+      padding-left: 36px;
+      margin-right: 0;
+      max-width: calc((100vw - 1066px) / 2 + 1066px);
+    }
+
+    @include mw($empty) {
+      padding-left: 0;
+      padding-bottom: 120px;
+
+      &::after {
+        right: 123px;
+      }
+
+      &::before {
+        left: 123px;
+      }
+
+
+    }
+
+    @include mw($tb) {
+      padding-top: 112px;
+      padding-bottom: 100px;
+
+      &::after {
+        right: calc((100vw - 522px) / 2);
+      }
+
+      &::before {
+        left: calc((100vw - 522px) / 2);
+      }
+    }
+
+    @include mw(600px) {
+      margin-left: 0;
+    }
+
+    @include mw(566px) {
+      &::after {
+        right: 22px;
+      }
+
+      &::before {
+        left: 22px;
+      }
+    }
+
+    @include mw($ph) {
+      padding-top: 90px;
+      padding-bottom: 66px;
+    }
+
+    @include mw($min-ph) {
+      padding-top: 78px;
+
+      &::after {
+        right: 14px;
+      }
+
+      &::before {
+        left: 14px;
+      }
     }
   }
 
   &__title {
-    // line-height: 56px;
-  }
+    line-height: 55px;
 
-  &__slider {}
-
-  &__control {
-    position: absolute;
-    bottom: 10px;
-    left: 60%;
+    @include mw($ldt) {
+      line-height: 50px;
+    }
 
     @include mw($dt) {
-      left: 56%;
+      line-height: 47px;
+      margin-bottom: 32px;
+    }
+
+    @include mw($empty) {
+      max-width: 430px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include mw($tb) {
+      max-width: 396px;
+      margin-bottom: 37px;
+    }
+
+    @include mw(566px) {
+      margin-left: 36px;
+      margin-right: 36px;
+    }
+
+    @include mw($ph) {
+      padding-left: 0;
+      line-height: 42px;
+      margin-bottom: 34px;
+    }
+
+    @include mw($min-ph) {
+      line-height: 34px;
+      margin-bottom: 42px;
+      margin-left: 32px;
+      margin-right: auto;
     }
   }
 
-  &__pagination {
-    display: flex;
-  }
-
-  & .swiper-pagination-bullet-active {
-    background-color: transparent;
-    width: 40px;
-    height: 40px;
-    border-color: rgba(69, 69, 71, 0.8);
-    margin-left: 10px;
-    margin-right: 10px;
-    cursor: auto;
-  }
 
   &__link {
     background: rgba(175, 124, 56, 0.9);
@@ -102,103 +180,105 @@
       margin-left: 22%;
     }
 
-    @include mw($dt) {
-      margin-left: 21%;
+    @include mw($empty) {
+      max-width: 337px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 22px;
     }
 
+    @include mw($ph) {
+      max-width: 320px;
+      font-size: 20px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+
+    @include mw($min-ph) {
+      font-size: 18px;
+      max-width: 270px;
+      padding-top: 20px;
+      padding-bottom: 18px;
+    }
+
+
+
+
   }
-
 }
 
-.line-block {}
 
-.container {
 
-  &--border {}
-}
 
-.title {
 
-  &--dark {
-    // color: ;
-  }
-}
-
-.projects-slider {
-  margin-bottom: 64px;
+.sliders-block {
   width: 100%;
-  padding-bottom: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 66px;
+
+  @include mw($dt) {
+    margin-bottom: 62px;
+    align-items: flex-start;
+  }
+
+  @include mw($empty) {
+    flex-direction: column-reverse;
+  }
+
+  @include mw($tb) {
+    margin-bottom: 107px;
+  }
+
+  @include mw($ph) {
+    margin-bottom: 60px;
+  }
+
+  @include mw($min-ph) {
+    margin-bottom: 40px;
+  }
+
+
+}
+
+.slider-info {
+  width: 33%;
+  padding-bottom: 6%;
 
   @include mw($ldt) {
-    padding-bottom: 61px;
+    width: 35%;
+    padding-bottom: 1%;
   }
 
-  &__wrapper {}
+  @include mw($dt) {
+    padding-bottom: 0;
+    padding-top: 25px;
+  }
 
-  &__item {
-    display: flex;
-    justify-content: space-between;
+  @include mw($empty) {
     width: 100%;
+    max-width: 390px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  &__left {
-    width: 36%;
-    max-width: 450px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    @include mw($dt) {
-      max-width: 390px;
-      padding-bottom: 7px;
-      justify-content: flex-end;
-    }
+  @include mw($tb) {
+    padding-top: 0;
   }
 
-  &__right {
-    width: 73%;
-    max-width: 914px;
-    margin-left: 20px;
-
-    @include mw($ldt) {
-      max-width: 817px;
-    }
-
-    @include mw($dt) {
-      max-width: 740px;
-      padding-top: 27px;
-
-    }
+  @include mw($ph) {
+    padding-left: 36px;
+    padding-right: 36px;
+    max-width: 100%;
   }
 
-  &__img {
-    @include mw($dt) {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 0;
-      top: 0;
-    }
+  @include mw($min-ph) {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
-  &__img-wrap {
-    @include mw($dt) {
-      width: 100%;
-      padding-top: 66%;
-      position: relative;
-    }
 
-  }
-}
-
-.swiper-container {}
-
-.swiper-wrapper {}
-
-.swiper-slide {}
-
-.projects-info {
-  // padding-top: 100px;
 
   &__item {
     display: flex;
@@ -207,8 +287,20 @@
     &+li {
       margin-top: 60px;
 
+      @include mw($ldt) {
+        margin-top: 63px;
+      }
+
       @include mw($dt) {
         margin-top: 50px;
+      }
+
+      @include mw($tb) {
+        margin-top: 35px;
+      }
+
+      @include mw($ph) {
+        margin-top: 27px;
       }
     }
   }
@@ -220,6 +312,10 @@
     text-transform: uppercase;
     color: rgba(64, 90, 38, 0.9);
     margin-bottom: 15px;
+
+    @include mw($tb) {
+      margin-bottom: 12px;
+    }
   }
 
   &__desc {
@@ -232,9 +328,205 @@
       font-size: 18px;
       line-height: 26px;
     }
+
+    @include mw($tb) {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    @include mw($ph) {
+      font-size: 18px;
+      line-height: 26px;
+    }
+
+    @include mw($min-ph) {
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
 }
 
-.lazyload {}
 
-.open-modal-consultation {}
+
+.slider-interior {
+
+  width: 64%;
+
+  @include mw($ldt) {
+    width: 63%;
+  }
+
+  @include mw($dt) {
+    width: 61%;
+  }
+
+  @include mw($empty) {
+    width: 100%;
+  }
+
+  @include mw($tb) {
+    margin-bottom: 46px;
+  }
+
+  @include mw($ph) {
+    margin-bottom: 30px;
+  }
+
+  @include mw($min-ph) {
+    margin-bottom: 26px;
+  }
+
+  &__container {
+    width: 100%;
+    padding-bottom: 120px;
+
+    @include mw($ldt) {
+      padding-bottom: 85px;
+    }
+
+    @include mw($empty) {
+      padding-bottom: 0;
+      padding-top: 105px;
+    }
+  }
+
+
+
+  &__img-wrap {
+    width: 100%;
+    padding-top: 70%;
+    position: relative;
+
+    @include mw($dt) {
+      padding-top: 68%;
+    }
+
+    @include mw($tb) {
+      padding-top: 69%;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+
+}
+
+
+
+.interior-controls {
+  @include centered(x);
+  bottom: 4px;
+
+  & .slider__bullet {
+
+    &+span {
+      margin-left: 15px;
+    }
+  }
+
+  @include mw($dt) {
+    bottom: 0;
+
+  }
+
+  @include mw($empty) {
+    bottom: auto;
+    top: 0;
+    display: flex;
+    align-items: center;
+  }
+
+
+  &__counter {
+    display: none;
+    font-size: 30px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: rgba(64, 90, 38, 0.9);
+    width: 50px;
+
+    @include mw($empty) {
+      display: block;
+    }
+
+    @include mw($ph) {
+      font-size: 25px;
+      line-height: 24px;
+      width: 40px;
+    }
+  }
+
+
+
+  &__pagination {
+    display: flex;
+    align-items: center;
+    height: 56px;
+
+    @include mw($empty) {
+      display: none;
+    }
+
+    & .swiper-pagination-bullet-active {
+      background-color: transparent;
+      width: 40px;
+      height: 40px;
+      border-color: rgba(69, 69, 71, 0.8);
+      margin-left: 10px;
+      margin-right: 10px;
+      cursor: auto;
+
+      @include hocus() {
+        &::after {
+          background-color: #454547;
+        }
+      }
+    }
+  }
+
+  &__prev {
+    display: none;
+  }
+
+  &__next {
+    display: none;
+    background-image: url(/img/svg/record-green.svg);
+    background-repeat: no-repeat;
+    background-size: 80px auto;
+    background-position: 10px 50%;
+    width: 263px;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: -0.02em;
+    color: #405A26;
+    padding-top: 18px;
+    padding-bottom: 15px;
+    padding-right: 30px;
+    text-align: right;
+    margin-left: 46px;
+    flex-shrink: 0;
+
+    @include mw($empty) {
+      display: block;
+    }
+
+    @include mw($ph) {
+      margin-left: 30px;
+    }
+
+    @include mw($min-ph) {
+      width: 205px;
+      font-size: 16px;
+      padding-top: 11px;
+      padding-bottom: 10px;
+      background-size: 65px auto;
+      background-position: 3px 50%;
+      padding-right: 20px;
+    }
+  }
+}

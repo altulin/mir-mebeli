@@ -150,39 +150,114 @@ block content
       h2.projects__title.title.title--all.title--dark Выполненные
         br
         | проекты
-      .projects__slider.projects-slider.swiper-container
 
-        .projects-slider__wrapper.swiper-wrapper
-          while n < 5
-            -n++
-            .projects-slider__item.swiper-slide
-              ul.projects-slider__left.projects-info
-                li.projects-info__item
-                  span.projects-info__term Объект
-                  span.projects-info__desc Квартира, кухня-гостиная 25 м2
+      .projects__block.sliders-block
+        .sliders-block__left.slider-info
+          .slider-info__container.swiper-container
+            .slider-info__wrapper.swiper-wrapper
+              while n<5
+                -n++
+                ul.slider-info__list.swiper-slide
+                  li.slider-info__item
+                    span.slider-info__term Объект
+                    span.slider-info__desc= `Квартира, кухня-гостиная ${25*n} м2`
 
-                li.projects-info__item
-                  span.projects-info__term Задача
-                  span.projects-info__desc Организация кухни-гостиной для&nbsp;молодой девушки
+                  li.slider-info__item
+                    span.slider-info__term Задача
+                    span.slider-info__desc Организация кухни-гостиной для&nbsp;молодой девушки
 
-                li.projects-info__item
-                  span.projects-info__term Решение
-                  span.projects-info__desc Перепланировка квартиры с учетом присоединения зоны кухни к гостиной. Предложено стилевое и цветовое решение. Осуществлен подбор материалов, даны рекомендации по&nbsp;освещению.
+                  li.slider-info__item
+                    span.slider-info__term Решение
+                    span.slider-info__desc Перепланировка квартиры с учетом присоединения зоны кухни к&nbsp;гостиной. Предложено стилевое и&nbsp;цветовое решение. Осуществлен подбор материалов, даны рекомендации по&nbsp;освещению.
+              -n=0
 
 
-              .projects-slider__right
-                figure.projects-slider__img-wrap
-                  +img-retina(`projects-slider`, `jpg`,``,`projects-slider__img`, `914`,`647`, 1200)
-          -n=0
+        .sliders-block__right.slider-interior
+          .slider-interior__container.swiper-container
+            ul.slider-interior__list.swiper-wrapper
+              while n<5
+                -n++
+                li.slider-interior__item.swiper-slide
+                  figure.slider-interior__img-wrap
+                    +img-retina(`interior`, `jpg`,``,`slider-interior__img`, `914`,`647`)
+              -n=0
 
-        .projects__control
-          .projects__pagination
+            .slider-interior__controls.interior-controls
+              .interior-controls__counter
+                span.interior-controls__current
+                | /
 
-          .projects__prev
-          .projects__next
+                span.interior-controls__sum
+
+              .interior-controls__pagination
+              .interior-controls__prev
+              .interior-controls__next.record-link Следующий
+
+
+
+
+
+
+
+
 
 
       a.projects__link.open-modal-consultation(href="#") Мне нужна консультация
+
+
+  section.decor
+    .decor__inner.container.container--decor
+      .decor__left.decor-left
+        .decor-left__title-block.t-block
+          .t-block__top
+            span.t-block__num 02
+            span.t-block__text.t-block__text--top  Декорирование
+          p.t-block__text.t-block__text--bottom интерьера
+        ul.decor-left__causes.causes
+          li.causes__item
+            figure.causes__img-wrap
+            .causes__block
+              h4.causes__title Сделали ремонт в новом доме
+              p.causes__text Декоратор поможет оживить новый интерьер, создать уникальную атмосферу и рассказать о вкусах хозяина.
+
+          li.causes__item
+            figure.causes__img-wrap.causes__img-wrap--even
+            .causes__block
+              h4.causes__title Наскучили серые стены
+              p.causes__text Мы знаем, как взбодрить интерьер без масштабного ремонта. Правильно расставленные акценты и подобранная графика преобразят атмосферу и поднимут настроение в будни.
+
+
+        .decor-left__scenario.scenario
+          h3.scenario__title Из чего состоит декорирование
+          ul.scenario__list
+            each item, i in scenario
+              li.scenario__item
+                figure.scenario__img-wrap(class=`scenario__img-wrap--${i+1}`)
+                .scenario__block
+                  h4.scenario__title= `${item[0]}`
+                  p.scenario__text= `${item[1]}`
+
+
+
+
+
+
+      .decor__right.specification
+        .specification__inner
+
+        h3.specification__title 3 000 ₽
+
+        .specification__box
+          p.specification__what что входит в стоимость:
+
+          ul.specification__list
+
+            li.specification__item
+              p.specification__text анализ интерьера с учетом всех возможностей его преображения
+
+            li.specification__item
+              p.specification__text предложения по необходимым предметам декора из интернет-магазинов
+
 
   //- include ../modules/_form.pug
 

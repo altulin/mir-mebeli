@@ -337,6 +337,7 @@
 })( jQuery, window, document );
 
 const windowWidth = window.innerWidth;
+let infoSwiper;
 
 const reload = () => {
   window.onresize = function () {
@@ -506,25 +507,48 @@ const getConsultationSlider = () => {
   }
 };
 
-const getProjectsSlider = () => {
-  const slider = $(".projects-slider");
+const getInfoSlider = () => {
+  const slider = $(".slider-info__container");
 
   if (check(slider)) {
-    const swiper = new Swiper(".projects-slider", {
-      loop: true,
+    infoSwiper = new Swiper(".slider-info__container", {
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true,
+      },
+    });
+  }
+};
+
+const getInteriorSlider = () => {
+  const slider = $(".slider-interior__container");
+  const current = $(".interior-controls__current");
+  const sum = $(".interior-controls__sum");
+
+  if (check(slider) && check(current) && check(sum)) {
+    const swiper = new Swiper(".slider-interior__container", {
+      spaceBetween: 30,
 
       pagination: {
-        el: ".projects__pagination",
+        el: ".interior-controls__pagination",
         bulletClass: "slider__bullet",
         clickable: true,
       },
 
-      // Navigation arrows
       navigation: {
-        nextEl: ".projectsr__next",
-        prevEl: ".projects__prev",
+        nextEl: ".interior-controls__next",
+        prevEl: ".interior-controls__prev",
       },
-      spaceBetween: 10,
+      on: {
+        afterInit(e) {
+          current.text(e.activeIndex + 1);
+          sum.text(e.slides.length);
+        },
+        slideChange(e) {
+          current.text(e.activeIndex + 1);
+          infoSwiper.slideTo(e.activeIndex);
+        },
+      },
     });
   }
 };
@@ -539,7 +563,8 @@ $(function () {
   sendFormRecord();
   getInputMask();
   getConsultationSlider();
-  getProjectsSlider();
+  getInfoSlider();
+  getInteriorSlider();
 });
 
 //# sourceMappingURL=script.js.map

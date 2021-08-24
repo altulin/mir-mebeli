@@ -869,6 +869,12 @@
     transition: 0.3s;
     cursor: pointer;
 
+    @include hocus() {
+      &::after {
+        background-color: #C0845E;
+      }
+    }
+
 
 
     &::after {
@@ -878,6 +884,7 @@
       height: 4px;
       border-radius: 50%;
       background-color: #454547;
+
     }
 
   }
@@ -890,6 +897,12 @@
     margin-left: 10px;
     margin-right: 10px;
     cursor: auto;
+
+    @include hocus() {
+      &::after {
+        background-color: #454547;
+      }
+    }
 
     @include mw($ph) {
       width: 35px;
