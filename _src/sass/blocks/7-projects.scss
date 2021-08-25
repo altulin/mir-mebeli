@@ -32,8 +32,13 @@
     padding-left: 0;
   }
 
+  @include mw($dt) {
+    min-height: 1011px;
+  }
+
   @include mw($tb) {
     background-image: none;
+
   }
 
   &__inner {

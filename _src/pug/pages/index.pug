@@ -213,18 +213,25 @@ block content
             span.t-block__num 02
             span.t-block__text.t-block__text--top  Декорирование
           p.t-block__text.t-block__text--bottom интерьера
-        ul.decor-left__causes.causes
-          li.causes__item
-            figure.causes__img-wrap
-            .causes__block
-              h4.causes__title Сделали ремонт в новом доме
-              p.causes__text Декоратор поможет оживить новый интерьер, создать уникальную атмосферу и рассказать о вкусах хозяина.
+        .causes__wrapper
+          h3.causes__mane-title Когда полезно
 
-          li.causes__item
-            figure.causes__img-wrap.causes__img-wrap--even
-            .causes__block
-              h4.causes__title Наскучили серые стены
-              p.causes__text Мы знаем, как взбодрить интерьер без масштабного ремонта. Правильно расставленные акценты и подобранная графика преобразят атмосферу и поднимут настроение в будни.
+          ul.decor-left__causes.causes
+            li.causes__item
+              figure.causes__img-wrap
+              .causes__block
+                h4.causes__title
+                  span.causes__ldt Сделали ремонт в новом доме
+                  span.causes__dt завершили ремонт
+                p.causes__text.causes__ldt Декоратор поможет оживить новый интерьер, создать уникальную атмосферу и рассказать о вкусах хозяина.
+                p.causes__text.causes__dt Декоратор поможет оживить новый интерьер и&nbsp;создать уникальную атмосферу
+
+            li.causes__item
+              figure.causes__img-wrap.causes__img-wrap--even
+              .causes__block
+                h4.causes__title Наскучили серые стены
+                p.causes__text.causes__ldt Мы знаем, как взбодрить интерьер без масштабного ремонта. Правильно расставленные акценты и&nbsp;подобранная графика преобразят атмосферу и&nbsp;поднимут настроение в будни.
+                p.causes__text.causes__dt Правильно расставленные акценты преобразят интерьер
 
 
         .decor-left__scenario.scenario
@@ -234,29 +241,79 @@ block content
               li.scenario__item
                 figure.scenario__img-wrap(class=`scenario__img-wrap--${i+1}`)
                 .scenario__block
-                  h4.scenario__title= `${item[0]}`
-                  p.scenario__text= `${item[1]}`
+                  if i === 0
+                    h4.scenario__sub-title
+                      span.scenario__dt-hidden Выбор стиля
+                      span.scenario__dt-visually Выбор стиля и&nbsp;оттенков в&nbsp;интерьере
+                  else if i === 1
+                    h4.scenario__sub-title
+                      span.scenario__dt-hidden Составление схемы освещения
+                      span.scenario__dt-visually Приемы освещения в&nbsp;пространстве
+                  else if i === 2
+                    h4.scenario__sub-title
+                      span.scenario__dt-hidden Поиск текстильных решений
+                      span.scenario__dt-visually Поиск текстильных решений
+                  else if i === 3
+                    h4.scenario__sub-title
+                      span.scenario__dt-hidden Дополнительные предметы декора и&nbsp;аксессуары
+                      span.scenario__dt-visually Подбор предметов декора и&nbsp;аксессуаров
+
+                  else
+                    h4.scenario__sub-title= item[0]
+
+
+                  if i === 0
+                    p.scenario__text
+
+                      span.scenario__ldt Грамотное смешение стилей и оттенков – главный шаг к правильному построению пространства
+                      span.scenario__dt Грамотное смешение стилей и создание общей стилистики – главный шаг к правильному построению пространства и цветовых решений.
+
+
+                  else if i === 1
+                    p.scenario__text
+                      span.scenario__ldt Различные приемы освещения  сбалансируют размер комнаты и сфокусируют внимание на ее достоинствах
+                      span.scenario__dt Использование различных приемов в освещении интерьера  сбалансирует размеры комнаты и сфокусирует внимание на ее достоинствах.
+
+                  else if i === 2
+                    p.scenario__text
+                      span.scenario__ldt Шторы, ковры, покрывала, пледы и подушки дарят уют и придают интерьеру завершенный, целостный вид
+                      span.scenario__dt Шторы, ковры, покрывала, пледы и подушки с интересной фактурой и подходящим цветовым решением дарят уют и придают интерьеру завершенный, целостный вид.
+
+                  else if i === 3
+                    p.scenario__text
+                      span.scenario__ldt Сочетание функциональности и уюта в каждом предмете декора: картины, плакаты, скульптуры, посуда, флористика и не только
+                      span.scenario__dt Сочетание функциональности, уюта и эстетики в каждом предмете декора: картины, плакаты, скульптуры, вазы, посуда, флористика и не только.
 
 
 
-
-
+                  else
+                    p.scenario__text= `${item[1]}`
 
       .decor__right.specification
         .specification__inner
 
-        h3.specification__title 3 000 ₽
+          h3.specification__title 3 000 ₽
 
-        .specification__box
-          p.specification__what что входит в стоимость:
+          .specification__box
+            p.specification__what что входит
+              br
+              | в стоимость:
 
-          ul.specification__list
+            ul.specification__list
 
-            li.specification__item
-              p.specification__text анализ интерьера с учетом всех возможностей его преображения
+              li.specification__item
+                p.specification__text
+                  span.specification__dt-hidden анализ интерьера с учетом всех возможностей его преображения
+                  span.specification__dt-visually разбор вашего интерьера
 
-            li.specification__item
-              p.specification__text предложения по необходимым предметам декора из интернет-магазинов
+              li.specification__item
+                p.specification__text
+                  span.specification__dt-hidden предложения по&nbsp;необходимым предметам декора из&nbsp;интернет-магазинов
+                  span.specification__dt-visually предложения по&nbsp;необходимым приемам и&nbsp;предметам декора
+
+
+
+              li.specification__cross
 
 
   //- include ../modules/_form.pug
