@@ -53,6 +53,7 @@
     "gulp-svgstore": "^7.0.1",
     "gulp-uglify-es": "^2.0.0",
     "gulp-webp": "^4.0.1",
+    "gulp-zip": "^5.1.0",
     "micromodal": "^0.4.6",
     "mmenu-light": "^3.0.8",
     "normalize.css": "^8.0.1",

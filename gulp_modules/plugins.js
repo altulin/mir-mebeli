@@ -25,6 +25,7 @@ import babel from "gulp-babel";
 import sassGlob from "gulp-sass-glob";
 import plumber from "gulp-plumber";
 import notify from "gulp-notify";
+import zip from "gulp-zip";
 
 const pluginsObject = {
   gulp,
@@ -54,6 +55,7 @@ const pluginsObject = {
   sassGlob,
   plumber,
   notify,
+  zip,
 };
 
 export default pluginsObject;

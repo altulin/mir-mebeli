@@ -2,6 +2,7 @@ import pluginsObject from "./plugins.js";
 
 const projectName = `mir`; // название проекта
 const distFolder = `${projectName}_dist`; // Папка продакшн
+const distFolderZip = `${distFolder}.zip`;
 const srcFolder = `_src`; // Папка разработки
 
 const mode = pluginsObject.minimist(process.argv.slice(2))._[0];
@@ -114,6 +115,7 @@ const paths = {
   },
   distFolder,
   srcFolder,
+  distFolderZip
 };
 
 export {

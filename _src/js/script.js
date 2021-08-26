@@ -603,5 +603,3 @@ $(function () {
   getInteriorSlider();
   getExamleSlider();
 });
-
-//# sourceMappingURL=script.js.map
