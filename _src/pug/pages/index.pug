@@ -214,7 +214,8 @@ block content
             span.t-block__text.t-block__text--top  Декорирование
           p.t-block__text.t-block__text--bottom интерьера
         .causes__wrapper
-          h3.causes__mane-title Когда полезно
+          h3.causes__mane-title.causes__mane-title--min-hidden Когда полезно
+          h3.causes__mane-title.causes__mane-title--min-visually Когда подойдет
 
           ul.decor-left__causes.causes
             li.causes__item
@@ -316,7 +317,59 @@ block content
               li.specification__cross
 
 
-  //- include ../modules/_form.pug
+
+  section.example.line-block
+    .example__inner.container.container--border
+      .example__col.example__col--left.example-decor
+        h2.example-decor__title.title.title--all.title--dark Примеры
+          br
+          | декорирования
+
+        p.example-decor__text Декорирование - заключительный этап создания интерьера, где будет обеспечено высокое качество жизни!
+
+        ul.example-decor__list
+          each item, i in example
+            li.example-decor__item
+
+              a.example-decor__item-text(href="#" data-slider_num=`${i}`)= item
+              span.example-decor__point
+              span.example-decor__line
+
+        a.example-decor__link.open-modal-consultation(href="#") Записаться
+
+        //- .example-slider__control.example-slider__control--tablet-visually
+          .example-slider__prev.example-slider__prev-tb
+          .example-slider__index
+            span.example-slider__index-current
+            | /
+            span.example-slider__index-sum
+          .example-slider__next.example-slider__next-tb
+
+
+
+
+
+      .example__col.example__col--right.example-slider.swiper-container
+        ul.example-slider__list.swiper-wrapper
+          while n < 9
+            -n++
+            li.example-slider__item.swiper-slide
+              h3.example-slider__title= example[`${n-1}`]
+
+              figure.example-slider__img-wrap
+                +img-retina(`examle-bg-${n}`, `jpg`,``,`example-slider__img`, `831`,`677`)
+          -n=0
+
+        .example-slider__control.example-slider__control--tablet-hidden
+          .example-slider__prev
+          .example-slider__index
+            span.example-slider__index-current
+            | /
+            span.example-slider__index-sum
+          .example-slider__next
+
+
+  include ../modules/_form.pug
 
 
 

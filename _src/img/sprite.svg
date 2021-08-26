@@ -1,4 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="hamburger-mob">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="arr-left">
+    <path d="M19 21.421c0-.154-.1-.301-.277-.41L2.293 10.996 18.722.982c.364-.23.354-.597-.024-.82-.368-.216-.952-.216-1.32 0L.28 10.588c-.372.226-.372.593 0 .82l17.1 10.424c.372.226.973.225 1.344-.001.177-.109.277-.256.277-.409z"/>
+    <path d="M1 11.5h55"/>
+</symbol><symbol id="arr-right">
+    <path d="M37 .579c0 .154.1.301.278.41l16.43 10.015-16.43 10.014c-.365.23-.355.597.023.82.368.216.952.216 1.32 0l17.1-10.425c.372-.226.372-.593 0-.82L38.622.17c-.372-.226-.974-.225-1.344.001C37.1.28 37 .426 37 .58z"/>
+    <path d="M0 10.5h55"/>
+</symbol><symbol id="hamburger-mob">
     <path d="M41 20H0v4h41v-4zm0-10H0v4h41v-4zm0-10H0v4h41V0z" fill-opacity=".8"/>
 </symbol><symbol id="hamburger">
     <path d="M14.453 9.166H0V11h14.453V9.166zm0-4.583H0v1.833h14.453V4.583zm0-4.583H0v1.833h14.453V0z"/>

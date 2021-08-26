@@ -153,6 +153,7 @@ const getConsultationSlider = () => {
   if (check(slider)) {
     const swiper = new Swiper(".slider__left", {
       loop: true,
+      spaceBetween: 50,
 
       pagination: {
         el: ".slider__pagination",
@@ -189,7 +190,7 @@ const getInteriorSlider = () => {
 
   if (check(slider) && check(current) && check(sum)) {
     const swiper = new Swiper(".slider-interior__container", {
-      spaceBetween: 30,
+      spaceBetween: 50,
 
       pagination: {
         el: ".interior-controls__pagination",
@@ -215,6 +216,41 @@ const getInteriorSlider = () => {
   }
 };
 
+const getExamleSlider = () => {
+  const slider = $(".example-slider");
+  const items = $(".example-decor__item");
+  let swiper;
+
+  const changeSlade = (e) => {
+    $(items).on("click", (evt) => {
+      evt.preventDefault();
+      $(items).removeClass("example-decor__item--current");
+      swiper.slideTo(evt.target.dataset.slider_num);
+    });
+  };
+
+  if (check(slider)) {
+    swiper = new Swiper(".example-slider", {
+      spaceBetween: 50,
+
+      navigation: {
+        nextEl: ".example-slider__next",
+        prevEl: ".example-slider__prev",
+      },
+      on: {
+        afterInit(e) {
+          $(items[e.activeIndex]).addClass("example-decor__item--current");
+          changeSlade(e);
+        },
+        slideChange(e) {
+          $(items).removeClass("example-decor__item--current");
+          $(items[e.activeIndex]).addClass("example-decor__item--current");
+        },
+      },
+    });
+  }
+};
+
 $(function () {
   // reload();
   getAccordionNav();
@@ -227,4 +263,5 @@ $(function () {
   getConsultationSlider();
   getInfoSlider();
   getInteriorSlider();
+  getExamleSlider();
 });

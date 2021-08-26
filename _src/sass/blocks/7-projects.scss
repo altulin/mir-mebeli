@@ -109,6 +109,7 @@
 
     @include mw($min-ph) {
       padding-top: 78px;
+      padding-bottom: 78px;
 
       &::after {
         right: 14px;
@@ -241,7 +242,7 @@
   }
 
   @include mw($min-ph) {
-    margin-bottom: 40px;
+    margin-bottom: 64px;
   }
 
 

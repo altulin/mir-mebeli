@@ -23,6 +23,24 @@
   }
 }
 
+@mixin miw($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+
+}
+
+
+@mixin mmw($max-width, $min-width) {
+  @media (max-width: $max-width) and (min-width: $min-width) {
+    @content;
+  }
+}
+
+
+
+
+
 // Font mixin
 @mixin font-load($name, $size, $weight, $style) {
   @font-face {

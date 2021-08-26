@@ -27,7 +27,8 @@
     }
 
     @include mw($tb) {
-      padding-left: 22px;
+      padding-right: 0;
+      padding-bottom: 0;
       padding-top: 115px;
       max-width: none;
       width: 100%;
@@ -36,6 +37,36 @@
         font-size: 40px;
         line-height: 40px;
       }
+    }
+
+    @include mw(600px) {
+      padding-bottom: 84px;
+    }
+
+    @include mw($ph) {
+      padding-top: 95px;
+
+      & .t-block__num {
+        font-size: 35px;
+        margin-right: 14px;
+      }
+
+      & .t-block__text {
+        font-size: 37px;
+        line-height: 35px;
+      }
+
+      & .t-block__top {
+        max-width: none;
+        justify-content: center;
+      }
+    }
+
+    @include mw(380px) {
+      & .t-block__text {
+        font-size: 30px;
+      }
+
     }
   }
 
@@ -47,6 +78,17 @@
     @include mw($tb) {
       max-width: 443px;
       width: 100%;
+      margin-left: 22px;
+      margin-right: 22px;
+      margin-bottom: 80px;
+    }
+
+    @include mw($ph) {
+      margin-bottom: 86px;
+    }
+
+    @include mw($min-ph) {
+      margin-bottom: 17px;
     }
   }
 
@@ -77,12 +119,41 @@
       width: 49%;
     }
 
+
+
     @include mw($empty) {
       position: relative;
     }
 
     @include mw($tb) {
-      width: 100%;
+      background-image: url(/img/frame-tb.png);
+      background-position: left bottom;
+      background-size: cover;
+      width: 95%;
+      height: 649px;
+      align-self: flex-end;
+    }
+
+    @include mw(600px) {
+      background-image: none;
+      border: 2px solid #AF7C38;
+      width: auto;
+      height: auto;
+      align-self: center;
+      padding: 40px;
+      margin-right: 48px;
+      margin-left: 48px;
+    }
+
+    @include mw($ph) {
+      padding-top: 68px;
+      padding-bottom: 36px;
+    }
+
+    @include mw($min-ph) {
+      padding-left: 24px;
+      padding-right: 14px;
+      padding-top: 57px;
     }
   }
 }
@@ -112,6 +183,15 @@
     @include mw($tb) {
       padding-left: 0px;
       margin-bottom: 56px;
+    }
+
+    @include mw($ph) {
+      margin-left: 0px;
+
+    }
+
+    @include mw($min-ph) {
+      margin-bottom: 49px;
     }
   }
 
@@ -150,6 +230,10 @@
     max-width: 390px;
   }
 
+  @include mw($ph) {
+    max-width: 320px;
+  }
+
   &__ldt {
     @include mw($dt) {
       display: none;
@@ -177,6 +261,11 @@
       margin-bottom: 91px;
     }
 
+    @include mw($ph) {
+      padding-left: 33px;
+      margin-bottom: 52px;
+    }
+
   }
 
   &__mane-title {
@@ -190,6 +279,26 @@
       text-transform: uppercase;
       color: #AF7C38;
       margin-bottom: 30px;
+    }
+
+    &--min-hidden {
+      @include mw($min-ph) {
+        display: none;
+      }
+    }
+
+    &--min-visually {
+      display: none;
+
+      @include mw($min-ph) {
+        display: block;
+        font-size: 28px;
+        line-height: 32px;
+      }
+    }
+
+    @include mw($min-ph) {
+      margin-bottom: 24px;
     }
   }
 
@@ -300,6 +409,18 @@
     padding-left: 25px;
   }
 
+  @include mw($ph) {
+    max-width: 346px;
+    padding-left: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include mw($min-ph) {
+    max-width: 300px;
+  }
+
+
   &__dt {
     display: none;
 
@@ -348,6 +469,11 @@
     @include mw($tb) {
       line-height: 38px;
     }
+
+    @include mw($min-ph) {
+      font-size: 28px;
+      line-height: 32px;
+    }
   }
 
   &__sub-title {
@@ -391,6 +517,14 @@
 
     @include mw($tb) {
       padding-left: 102px;
+    }
+
+    @include mw($ph) {
+      padding-left: 93px;
+    }
+
+    @include mw($min-ph) {
+      padding-left: 81px;
     }
 
     &+li {
@@ -515,6 +649,15 @@
       left: 396px;
       top: 383px;
     }
+
+    @include mw($tb) {
+      left: 60%;
+    }
+
+    @include mw(600px) {
+      position: static;
+      transform: none;
+    }
   }
 
   &__title {
@@ -525,6 +668,17 @@
     color: #AF7C38;
     margin-bottom: 68px;
     padding-left: 13px;
+
+    @include mw($ph) {
+      margin-bottom: 50px;
+    }
+
+    @include mw($min-ph) {
+      font-size: 45px;
+      padding-left: 0;
+      text-align: center;
+      margin-bottom: 29px;
+    }
   }
 
   &__box {}
@@ -542,6 +696,11 @@
     padding-right: 8px;
     display: inline-block;
     margin-bottom: 29px;
+
+    @include mw($min-ph) {
+      font-size: 22px;
+      padding-right: 27px;
+    }
   }
 
   &__list {
@@ -556,11 +715,23 @@
       padding-left: 20px;
       max-width: 300px;
     }
+
+    @include mw($tb) {
+      padding-left: 0;
+    }
+
+    @include mw($ph) {
+      padding-left: 22px;
+    }
   }
 
   &__item {
     &+li {
       margin-top: 27px;
+
+      @include mw($min-ph) {
+        margin-top: 19px;
+      }
     }
   }
 
@@ -590,6 +761,19 @@
     @include mw($dt) {
       top: 38px;
       left: -50px;
+    }
+
+    @include mw($ph) {
+      width: 47px;
+      height: 47px;
+      top: 50px;
+      left: -30px;
+    }
+
+    @include mw($min-ph) {
+      width: 34px;
+      height: 34px;
+      left: -16px;
     }
 
 
