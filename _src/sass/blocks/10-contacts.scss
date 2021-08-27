@@ -1,0 +1,196 @@
+.contacts {
+
+  &__inner {
+    display: flex;
+
+    @include mw($tb) {
+      flex-direction: column;
+    }
+  }
+
+
+  &__left {
+    width: 45%;
+    padding-top: 122px;
+    padding-bottom: 122px;
+
+    @include mw($tb) {
+      width: 100%;
+      padding-top: 99px;
+      padding-bottom: 99px;
+    }
+
+    @include mw($ph) {
+      padding-top: 81px;
+      padding-bottom: 81px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 50px;
+    color: #202020;
+    margin-bottom: 55px;
+
+    @include mw($ph) {
+      font-size: 35px;
+      line-height: 36px;
+      margin-bottom: 43px;
+    }
+
+    @include mw($min-ph) {
+      font-size: 33px;
+      line-height: 34px;
+      margin-bottom: 34px;
+    }
+  }
+
+  &__phone {}
+
+  &__right {
+    flex-grow: 1;
+
+    @include mw($tb) {
+      width: 100%;
+    }
+  }
+
+  &__map-wrap {}
+
+  &__map {
+    min-height: 794px;
+    height: 100%;
+
+    @include mw($ldt) {
+
+      min-height: 721px;
+    }
+
+    @include mw($dt) {
+      min-height: 710px;
+    }
+
+    @include mw($tb) {
+      min-height: auto;
+      height: 650px;
+    }
+
+    @include mw($ph) {
+      height: 600px;
+
+
+    }
+
+    @include mw($min-ph) {
+      height: 583px;
+    }
+  }
+}
+
+.contacts-data {
+  background-color: #A7BBA3;
+
+  &__wrapper {
+    max-width: 336px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include mw($min-ph) {
+      max-width: none;
+      width: 100%;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+
+  }
+
+  &__list-addr {}
+}
+
+.addresses {
+  margin-bottom: 62px;
+
+  @include mw($ph) {
+    margin-bottom: 43px;
+  }
+
+  &__item {
+
+    h3 {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 24px;
+      text-transform: uppercase;
+      color: rgba(64, 90, 38, 0.9);
+      margin-bottom: 4px;
+    }
+
+    p {
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 21px;
+      letter-spacing: 0.02em;
+      color: #202020;
+
+      &+p {
+        margin-top: 4px;
+      }
+    }
+
+    &+li {
+      margin-top: 39px;
+
+      @include mw($min-ph) {
+        margin-top: 29px;
+      }
+    }
+  }
+}
+
+.tel-link {
+  display: flex;
+  align-items: center;
+  color: #202020;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 20px;
+  margin-bottom: 57px;
+  transition: 0.3s;
+
+  @include hocus() {
+    opacity: 0.7;
+  }
+
+  @include mw($ph) {
+    margin-bottom: 37px;
+  }
+
+
+  &__icon {
+    margin-right: 25px;
+
+  }
+
+
+}
+
+.contacts_soc {}
+
+.social {
+  display: flex;
+
+  &__item {
+    &+li {
+      margin-left: 30px;
+    }
+  }
+
+  &__link {}
+
+  &__icon {}
+}

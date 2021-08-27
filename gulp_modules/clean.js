@@ -12,9 +12,7 @@ const clean = () => {
   return del(distFolder, { force: true }); // Удаляем всю папку продакшн
 };
 const cleanZip = () => {
-  if (distFolderZip) {
-    return del(distFolderZip, { force: true }); // Удаляем всю папку продакшн zip
-  }
+  return del(distFolderZip, { force: true }); // Удаляем всю папку продакшн zip
 };
 
 const cleanImg = () => {

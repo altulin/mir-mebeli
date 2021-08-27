@@ -339,10 +339,12 @@
 const windowWidth = window.innerWidth;
 let infoSwiper;
 
-const reload = () => {
-  window.onresize = function () {
-    window.location.reload();
-  };
+const actualYear = () => {
+  const year = new Date().getFullYear();
+
+  if (document.querySelector("[data-actual-year]")) {
+    document.querySelector("[data-actual-year]").textContent = year;
+  }
 };
 
 const check = (element) => {
@@ -557,6 +559,8 @@ const getInteriorSlider = () => {
 const getExamleSlider = () => {
   const slider = $(".example-slider");
   const items = $(".example-decor__item");
+  const current = $(".example-slider__index-current");
+  const sum = $(".example-slider__index-sum");
   let swiper;
 
   const changeSlade = (e) => {
@@ -579,18 +583,117 @@ const getExamleSlider = () => {
         afterInit(e) {
           $(items[e.activeIndex]).addClass("example-decor__item--current");
           changeSlade(e);
+          current.text(e.activeIndex + 1);
+          sum.text(e.slides.length);
         },
         slideChange(e) {
           $(items).removeClass("example-decor__item--current");
           $(items[e.activeIndex]).addClass("example-decor__item--current");
+          current.text(e.activeIndex + 1);
         },
       },
     });
   }
 };
 
+function initBasketMap() {
+  const myMap = new ymaps.Map("map", {
+    center: [52.2983873, 104.267158],
+    zoom: 12,
+    controls: [],
+  });
+
+  const placemarkMir = new ymaps.Placemark(
+    [52.27707, 104.30602],
+    {
+      balloonContent: getBallon("mir"),
+      maxWidth: 300,
+    },
+    {
+      iconLayout: "default#image",
+      iconImageHref: "./img/svg/mark-map.svg",
+      iconImageSize: [51, 73],
+      // hideIconOnBalloonOpen: false,
+    }
+  );
+  const placemarkEtalon = new ymaps.Placemark(
+    [52.2983873, 104.267158],
+    {
+      balloonContent: getBallon("etalon"),
+    },
+    {
+      iconLayout: "default#image",
+      iconImageHref: "./img/svg/mark-map.svg",
+      iconImageSize: [51, 73],
+      // hideIconOnBalloonOpen: false,
+    }
+  );
+
+  myMap.geoObjects.add(placemarkMir);
+  myMap.geoObjects.add(placemarkEtalon);
+
+  myMap.behaviors.disable("scrollZoom");
+}
+
+const createMap = () => {
+  const map = $("#map");
+  if (check(map)) {
+    ymaps.ready(initBasketMap);
+  }
+};
+
+const marks = new Map([
+  [
+    "mir",
+    [
+      "Магазин «Мир мебели»",
+      "Партизанская, 56",
+      "пн - сб  10:00 - 20:00,  вс 11:00 - 19:00",
+    ],
+  ],
+  [
+    "etalon",
+    [
+      "МЦ Эталон",
+      "Партизанская, 63., 2 этаж",
+      "пн - сб 10:00 - 19:00, вс 11:00 - 19:00",
+    ],
+  ],
+]);
+
+const getBallon = (name) => {
+  return `<div class="addresses__item">
+    <h3>${marks.get(name)[0]}</h3>
+    <p>${marks.get(name)[1]}</p>
+    <p>${marks.get(name)[2]}</p>
+  </div>`;
+};
+
+const scrollToTop = () => {
+  const link = $(".up__link");
+  const top = $("body,html");
+
+  if (check(link)) {
+    link.on("click", (e) => {
+      e.preventDefault();
+      top.animate(
+        {
+          scrollTop: 0,
+        },
+        800
+      );
+    });
+  }
+};
+
+const reload = () => {
+  window.onresize = function () {
+    window.location.reload();
+  };
+};
+
 $(function () {
-  // reload();
+  reload();
   getAccordionNav();
   getDropDown();
   getMenuMobile();
@@ -602,4 +705,7 @@ $(function () {
   getInfoSlider();
   getInteriorSlider();
   getExamleSlider();
+  createMap();
+  actualYear();
+  scrollToTop();
 });

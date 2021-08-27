@@ -1,4 +1,38 @@
-//- footer.main-footer
-//- .main-footer__inner.container
-  p.main-footer__copy © 2020
-  a.main-footer__politic.hover-opacity(href="/politic.html") Политика конфиденциальности
+footer.main-footer
+  .main-footer__inner
+    .main-footer__top
+      a.footer__logo(href="#")
+        +img-retina(`nav-logo`, `png`, `логотип`, `logo__img`, `141`, `21`)
+
+    .main-footer__bottom
+      .footer__nav-wrap
+        nav.footer__nav.footer-nav--left
+          a.footer-nav__link(href="") О компании
+          a.footer-nav__link(href="") Каталог мебели
+          a.footer-nav__link(href="") Бренды
+        nav.footer__nav.footer-nav--right
+          a.footer-nav__link(href="") Распродажа
+          a.footer-nav__link(href="") Акции
+          a.footer-nav__link(href="#contacts") Контакты
+
+      .footer__copy.copy
+        p ©
+          |
+          |
+          span(data-actual-year) 2021
+          |
+          | Сеть салонов «Мир мебели» <br>Все права защищены
+        p Дизайн и разработка
+          a.copy__link(href="#")  Jet Marketing
+
+    .footer__up.up
+      a.up__link(href="#" area-label="В начало")
+
+
+
+
+
+
+
+    //- p.main-footer__copy © 2020
+    //- a.main-footer__politic.hover-opacity(href="/politic.html") Политика конфиденциальности

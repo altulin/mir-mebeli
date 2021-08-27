@@ -1,5 +1,189 @@
 .main-footer {
   margin-top: auto;
-  padding-left: 40px;
-  background-color: #84e91e;
+  background-color: #36544F;
+  padding-left: 135px;
+  padding-right: 135px;
+
+  @include mw($ldt) {
+    padding-left: 103px;
+    padding-right: 103px;
+  }
+
+  @include mw($tb) {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  &__inner {
+    margin: 0 auto;
+    max-width: 1407px;
+    padding-top: 79px;
+    padding-bottom: 111px;
+    position: relative;
+
+    @include mw($tb) {
+      max-width: 343px;
+    }
+
+    @include mw($tb) {
+      padding-top: 74px;
+      padding-bottom: 74px;
+    }
+
+
+  }
+
+  &__top {
+    margin-bottom: 39px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include mw($tb) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}
+
+.footer {
+
+  &__copy {
+    align-self: stretch;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+
+    &+nav {
+      margin-left: 170px;
+
+      @include mw($tb) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__nav-wrap {
+    display: flex;
+
+    @include mw($tb) {
+      flex-direction: column;
+    }
+
+    @include mw($tb) {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__copy {
+    & p {
+      font-size: 18px;
+      line-height: 22px;
+      text-align: right;
+      letter-spacing: 0.02em;
+      color: #FFFFFF;
+
+      @include mw($tb) {
+        text-align: center;
+      }
+
+      &+p {
+        margin-top: 29px;
+      }
+
+      @include mw($ph) {
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+
+    & a {
+      font-size: 18px;
+      line-height: 22px;
+      text-align: right;
+      letter-spacing: 0.02em;
+      color: #FFFFFF;
+      transition: 0.3s;
+
+      @include mw($ph) {
+        font-size: 14px;
+        line-height: 18px;
+      }
+
+      @include hocus() {
+        color: #61BF1A;
+      }
+    }
+  }
+
+  &__up {}
+}
+
+.lazyload {}
+
+.logo {
+  display: inline-block;
+
+  &__img {}
+}
+
+.footer-nav {
+
+  &__link {
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 34px;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    transition: 0.3s;
+
+    @include hocus() {
+      color: #61BF1A;
+    }
+
+    @include mw($tb) {
+      font-size: 22px;
+      line-height: 34px;
+    }
+
+    @include mw($ph) {
+      font-size: 20px;
+      line-height: 32px;
+    }
+
+  }
+}
+
+.up {
+
+  position: absolute;
+  right: -51px;
+  top: 51px;
+
+  @include mw($tb) {
+    right: 22px;
+  }
+
+  @include mw($min-ph) {
+    right: -10px;
+  }
+
+  &__link {
+    display: block;
+    width: 51px;
+    height: 51px;
+    background-image: url(/img/svg/up.svg);
+    background-size: cover;
+    transition: 0.3s;
+
+    @include hocus() {
+      opacity: 0.6;
+    }
+  }
 }

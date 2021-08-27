@@ -78,7 +78,7 @@
   padding-right: 20px;
 
   @include mw($empty) {
-    width: 100%;
+    width: calc(100% - 44px);
     max-width: 521px;
     margin-right: 22px;
     margin-left: 22px;
@@ -96,10 +96,32 @@
     padding-bottom: 69px;
   }
 
+  @include mw(600px) {
+    padding-top: 96px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+  }
+
 
   &__title {
     line-height: 55px;
     margin-bottom: 65px;
+
+    @include mw(600px) {
+      font-size: 35px;
+      line-height: 36px;
+      margin-bottom: 21px;
+      padding-left: 0;
+    }
+
+    @include mw($min-ph) {
+      font-size: 33px;
+    }
+
+    @include mw(320px) {
+      font-size: 30px;
+    }
   }
 
   &__text {
@@ -113,6 +135,12 @@
       font-size: 18px;
       line-height: 26px;
       max-width: 372px;
+    }
+
+    @include mw($ph) {
+      font-size: 16px;
+      line-height: 22px;
+      margin-bottom: 0;
     }
   }
 
@@ -235,13 +263,11 @@
   }
 
   @include mw($tb) {
-    // padding-top: 69px;
+    padding-top: 69px;
     padding-bottom: 0;
+    // padding-bottom: 0;
   }
 
-  &__list {}
-
-  &__item {}
 
   &__title {
     display: none;
@@ -300,21 +326,21 @@
     @include mw($tb) {
       top: 0;
       bottom: auto;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
+      width: calc(100% - 44px);
+      // width: 100%;
+      max-width: 521px;
+      border-right: 1px solid rgba(64, 90, 38, 0.2);
+      border-left: 1px solid rgba(64, 90, 38, 0.2);
+      padding-bottom: 27px;
+
     }
 
-    &--tablet-visually {
-      display: none;
 
-      @include mw($tb) {
-        display: block;
-      }
-    }
-
-    &--tablet-hidden {
-      @include mw($tb) {
-        display: none;
-      }
-    }
   }
 
   &__prev {
@@ -323,11 +349,17 @@
     margin-right: 58px;
     background-image: url(/img/svg/arr-left.svg);
     background-repeat: no-repeat;
+    background-size: contain;
     background-position: center;
     cursor: pointer;
 
     @include hocus() {
       opacity: 0.8;
+    }
+
+    @include mw($tb) {
+      width: 40px;
+      margin-right: 52px;
     }
   }
 
@@ -336,6 +368,12 @@
 
     @include mw($empty) {
       display: block;
+      font-size: 25px;
+      line-height: 24px;
+      text-transform: uppercase;
+      color: rgba(64, 90, 38, 0.9);
+      width: 42px;
+
     }
   }
 
@@ -348,12 +386,21 @@
     height: 20px;
     background-image: url(/img/svg/arr-left.svg);
     background-repeat: no-repeat;
+    background-size: contain;
     background-position: center;
     transform: rotate(180deg);
     cursor: pointer;
 
     @include hocus() {
       opacity: 0.8;
+    }
+
+    @include mw($tb) {
+      background-image: url(/img/svg/arr-brown.svg);
+      transform: none;
+      height: 47px;
+      width: 80px;
+      margin-left: 29px;
     }
   }
 }

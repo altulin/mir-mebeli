@@ -360,7 +360,9 @@ block content
                 +img-retina(`examle-bg-${n}`, `jpg`,``,`example-slider__img`, `831`,`677`)
           -n=0
 
-        .example-slider__control.example-slider__control--tablet-hidden
+
+
+        .example-slider__control
           .example-slider__prev
           .example-slider__index
             span.example-slider__index-current
@@ -370,6 +372,48 @@ block content
 
 
   include ../modules/_form.pug
+
+  section.contacts#contacts
+    .contacts__inner
+      .contacts__left.contacts-data
+        .contacts-data__wrapper
+          h2.contacts__title Контактная
+            br
+            | информация
+          ul.contacts-data__list-addr.addresses
+            li.addresses__item
+              h3 Магазин «Мир мебели»
+              p Партизанская, 56
+              p пн - сб  10:00 - 20:00,  вс 11:00 - 19:00
+
+            li.addresses__item
+              h3 МЦ Эталон
+              p Партизанская, 63., 2 этаж
+              p пн - сб  10:00 - 19:00,  вс 11:00 - 19:00
+
+
+          a.contacts__phone.tel-link(href="tel:+73912265705")
+            +svg('tel', 35, 35, 'tel-link')
+            | 7 (3912) 265-705
+
+          ul.contacts_soc.social
+            li.social__item
+              a.social__link(href="https://www.instagram.com/mirmebely38/" aria-label="" target="_blank")
+                +svg('insta', 40, 40,'social' )
+            li.social__item
+              a.social__link(href="" aria-label="" target="_blank")
+                +svg('viber', 40, 40,'social' )
+            li.social__item
+              a.social__link(href="" aria-label="" target="_blank")
+                +svg('whatsapp', 40, 40,'social' )
+            li.social__item
+              a.social__link(href="" aria-label="" target="_blank")
+                +svg('tg', 40, 40,'social' )
+
+
+      .contacts__right
+        #map.contacts__map
+
 
 
 

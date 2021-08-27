@@ -597,7 +597,7 @@
               </figure>
             </li>
           </ul>
-          <div class="example-slider__control example-slider__control--tablet-hidden">
+          <div class="example-slider__control">
             <div class="example-slider__prev"></div>
             <div class="example-slider__index"><span class="example-slider__index-current"></span>/<span class="example-slider__index-sum"></span>
             </div>
@@ -636,6 +636,64 @@
         </form>
       </div>
     </section>
+    <section class="contacts" id="contacts">
+      <div class="contacts__inner">
+        <div class="contacts__left contacts-data">
+          <div class="contacts-data__wrapper">
+            <h2 class="contacts__title">Контактная<br>информация</h2>
+            <ul class="contacts-data__list-addr addresses">
+              <li class="addresses__item">
+                <h3>Магазин «Мир мебели»</h3>
+                <p>Партизанская, 56</p>
+                <p>пн - сб 10:00 - 20:00, вс 11:00 - 19:00</p>
+              </li>
+              <li class="addresses__item">
+                <h3>МЦ Эталон</h3>
+                <p>Партизанская, 63., 2 этаж</p>
+                <p>пн - сб 10:00 - 19:00, вс 11:00 - 19:00</p>
+              </li>
+            </ul>
+            <a class="contacts__phone tel-link" href="tel:+73912265705">
+              <svg class="tel-link__icon" viewBox="0 0 35 35" width="35" height="35">
+                <use xlink:href="/img/sprite.svg#tel"></use>
+              </svg>7 (3912) 265-705</a>
+            <ul class="contacts_soc social">
+              <li class="social__item">
+                <a class="social__link" href="https://www.instagram.com/mirmebely38/" aria-label="" target="_blank">
+                  <svg class="social__icon" viewBox="0 0 40 40" width="40" height="40">
+                    <use xlink:href="/img/sprite.svg#insta"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" href="" aria-label="" target="_blank">
+                  <svg class="social__icon" viewBox="0 0 40 40" width="40" height="40">
+                    <use xlink:href="/img/sprite.svg#viber"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" href="" aria-label="" target="_blank">
+                  <svg class="social__icon" viewBox="0 0 40 40" width="40" height="40">
+                    <use xlink:href="/img/sprite.svg#whatsapp"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" href="" aria-label="" target="_blank">
+                  <svg class="social__icon" viewBox="0 0 40 40" width="40" height="40">
+                    <use xlink:href="/img/sprite.svg#tg"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="contacts__right">
+          <div class="contacts__map" id="map"></div>
+        </div>
+      </div>
+    </section>
     <section class="modal modal--consultation modal-consultation" id="modal-consultation">
       <div class="modal__inner">
         <h2 class="modal__title modal__title--consultation">Записаться на&nbsp;консультацию</h2>
@@ -662,6 +720,37 @@
       </div>
     </section>
   </main>
+  <footer class="main-footer">
+    <div class="main-footer__inner">
+      <div class="main-footer__top">
+        <a class="footer__logo" href="#">
+          <img class="lazyload logo__img" data-src="/img/nav-logo.png" data-srcset="/img/nav-logo.png 1x, /img/nav-logo@2x.png 2x" alt="логотип" width="141" height="21" loading="lazy" />
+        </a>
+      </div>
+      <div class="main-footer__bottom">
+        <div class="footer__nav-wrap">
+          <nav class="footer__nav footer-nav--left"><a class="footer-nav__link" href="">О компании</a><a class="footer-nav__link" href="">Каталог мебели</a><a class="footer-nav__link" href="">Бренды</a>
+          </nav>
+          <nav class="footer__nav footer-nav--right"><a class="footer-nav__link" href="">Распродажа</a><a class="footer-nav__link" href="">Акции</a><a class="footer-nav__link" href="#contacts">Контакты</a>
+          </nav>
+        </div>
+        <div class="footer__copy copy">
+          <p>
+            ©
+            <span data-actual-year>2021</span>
+            Сеть салонов «Мир мебели»
+            <br>Все права защищены
+          </p>
+          <p>Дизайн и разработка<a class="copy__link" href="#"> Jet Marketing</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer__up up">
+        <a class="up__link" href="#" area-label="В начало"></a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;amp;apikey=cf1c1431-1386-4d22-ba10-fe09e8ffcd25;lang=ru_RU&amp;amp;load=Map,Placemark,Layer" type="text/javascript"></script>
   <script src="/js/script.js"></script>
 </body>
 
