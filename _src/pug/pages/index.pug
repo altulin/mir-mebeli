@@ -6,7 +6,7 @@ block content
 
   section.promo
     .promo__img-wrap
-      +img-retina(`promo-bg`, `jpg`,``,`promo__img`, `1920`,`965`,360, 412, 768, 1200, 1440)("webp")
+      +img-retina(`promo-bg`, `jpg`,``,`promo__img`, `1920`,`965`,360, 412, 768, 1200, 1440)
 
     .promo__inner
       h2.promo__title Поможем
@@ -45,7 +45,7 @@ block content
 
       .consultation__top.cons-top.line-block
         .cons-top__img-wrap
-          +img-retina(`cons-bg`, `jpg`,``,`cons-top__img`, `1920`,`969`,360, 412, 1000, 1200, 1440)("lazy","webp")
+          +img-retina(`cons-bg`, `jpg`,``,`cons-top__img`, `1920`,`969`,360, 412, 1000, 1200, 1440)("lazy")
 
 
 
@@ -91,7 +91,7 @@ block content
               while n < 5
                 -n++
                 .slider__item.swiper-slide
-                  +img-retina(`slider-bg-${n}`, `jpg`,``,`slider__img`, `961`,`641`)("lazy", "webp")
+                  +img-retina(`slider-bg-${n}`, `jpg`,``,`slider__img`, `961`,`641`)("lazy")
 
 
               -n=0
@@ -179,7 +179,7 @@ block content
                 -n++
                 li.slider-interior__item.swiper-slide
                   figure.slider-interior__img-wrap
-                    +img-retina(`interior`, `jpg`,``,`slider-interior__img`, `914`,`647`)("lazy", "webp")
+                    +img-retina(`interior`, `jpg`,``,`slider-interior__img`, `914`,`647`)("lazy")
               -n=0
 
             .slider-interior__controls.interior-controls
@@ -357,7 +357,7 @@ block content
               h3.example-slider__title= example[`${n-1}`]
 
               figure.example-slider__img-wrap
-                +img-retina(`examle-bg-${n}`, `jpg`,``,`example-slider__img`, `831`,`677`)("lazy", "webp")
+                +img-retina(`examle-bg-${n}`, `jpg`,``,`example-slider__img`, `831`,`677`)("lazy")
           -n=0
 
 

@@ -15,89 +15,35 @@ mixin svg(name, width, height, className)
 
 //- +img-retina(``, ``, ``, ``, ``, ``)
 mixin img-retina(name, type, alt, className, width, height, ...args)
-  - let attributesSourceWebp ={};
+  - let srcsetAttr = attributes.lazy ? 'data-srcset' : 'srcset';
+  - let srcAttr = attributes.lazy ? 'data-src' : 'src';
+  - let sourceWebp = {};
+  - let img = {};
 
-  - attributes.src = `/img/${name}.${type}`;
-  - attributes.srcset = `/img/${name}.${type} 1x, /img/${name}@2x.${type} 2x`;
-  - attributes.class = `${className}`;
+  - sourceWebp[srcsetAttr] = `/img/webp/${name}.webp 1x, /img/webp/${name}@2x.webp 2x`;
+  - img.class = attributes.lazy ? `lazyload ${className}` : `${className}`;
+  - img[srcAttr] = `/img/${name}.${type}`;
+  - img[srcsetAttr] = `/img/${name}.${type} 1x, /img/${name}@2x.${type} 2x`;
+  - img.alt = alt;
+  - img.width = width;
+  - img.height = height;
 
+  picture
+    if args.length > 0
+      - let sourceArgsWebp = {};
+      - let sourceArgs = {};
 
-
-
-  if attributes.lazy
-    - attributes.class = `lazyload ${className}`;
-    - attributes['data-src'] = `/img/${name}.${type}`;
-    - attributes['data-srcset'] = `/img/${name}.${type} 1x, /img/${name}@2x.${type} 2x`;
-
-    - delete attributes.src;
-    - delete attributes.srcset;
-
-
-
-
-
-
-  if args.length > 0
-    - let attributesSource = {};
-
-    picture
 
       each item in args
+        - sourceArgsWebp[srcsetAttr] = `/img/webp/${name}-${item}.webp 1x, /img/webp/${name}-${item}@2x.webp 2x`;
+        - sourceArgs[srcsetAttr] = `/img/${name}-${item}.${type} 1x, /img/${name}-${item}@2x.${type} 2x`;
+        - let media = `(max-width: ${item}px)`
 
-        if attributes.webp
+        source(media = `${media}`)&attributes(sourceArgsWebp)
+        source(media = `${media}`)&attributes(sourceArgs)
 
-          - attributesSourceWebp.media = `(max-width: ${item}px)`;
-
-          if attributes.lazy
-            - attributesSourceWebp['data-srcset'] = `/img/webp/${name}-${item}.webp 1x, /img/webp/${name}-${item}@2x.webp 2x`
-
-          else
-            - attributesSourceWebp.srcset = `/img/webp/${name}-${item}.webp 1x, /img/webp/${name}-${item}@2x.webp 2x`
-          source&attributes(attributesSourceWebp)
-
-        - attributesSource.media = `(max-width: ${item}px)`;
-
-        if attributes.lazy
-          - attributesSource['data-srcset'] = `/img/${name}-${item}.${type} 1x, /img/${name}-${item}@2x.${type} 2x`;
-        else
-          - attributesSource.srcset = `/img/${name}-${item}.${type} 1x, /img/${name}-${item}@2x.${type} 2x`;
-
-        source&attributes(attributesSource)
-
-      if attributes.webp
-
-        if attributes.lazy
-          source(data-srcset = `/img/webp/${name}.webp 1x, /img/webp/${name}@2x.webp 2x`)
-        else
-          source(srcset = `/img/webp/${name}.webp 1x, /img/webp/${name}@2x.webp 2x`)
-
-
-      - delete attributes.webp
-      - delete attributes.lazy
-
-      img(alt=alt width=width height=height loading="lazy")&attributes(attributes)
-
-  else
-
-    if attributes.webp
-
-      picture
-        if attributes.lazy
-          source(data-srcset = `/img/webp/${name}.webp 1x, /img/webp/${name}@2x.webp 2x`)
-        else
-          source(srcset = `/img/webp/${name}.webp 1x, /img/webp/${name}@2x.webp 2x`)
-
-        - delete attributes.webp
-        - delete attributes.lazy
-
-
-        img(   alt=alt width=width height=height loading="lazy")&attributes(attributes)
-
-    else
-      - delete attributes.webp
-      - delete attributes.lazy
-      img(   alt=alt width=width height=height loading="lazy")&attributes(attributes)
-
+    source&attributes(sourceWebp)
+    img&attributes(img)
 
 //- mixin img-retina(name, type, alt, className, width, height, ...args)
 
