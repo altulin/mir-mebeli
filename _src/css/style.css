@@ -1842,6 +1842,9 @@ button {
 [data-accordion] [data-control] {
   padding: 5px 0; }
 
+.open .sub-list {
+  pointer-events: auto; }
+
 .sub-list {
   position: absolute;
   right: 50px;

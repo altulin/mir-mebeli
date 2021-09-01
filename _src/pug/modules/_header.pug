@@ -15,10 +15,10 @@ header.header#header
       ul.nav__list
 
         li.nav__item
-          a.nav__link(href='#') консультация дизайнера&nbsp;интерьера
+          a.nav__link.anchor.menu-link(href='#consultation') консультация дизайнера&nbsp;интерьера
 
         li.nav__item
-          a.nav__link(href='#') декорирование интерьера
+          a.nav__link.anchor.menu-link(href='#decor') декорирование интерьера
 
         li.nav__item.nav__item--down(data-accordion)
           a.nav__link.nav__link--down.nav__link--catalog(href='#' data-control)
@@ -27,10 +27,10 @@ header.header#header
           ul.nav__list-sub.sub-list(data-content)
             each item in catalogItems
               li.sub-list__item
-                a.sub-list__link(href='#')= item
+                a.sub-list__link(href=`${item[1]}` target="_blank" rel="noopener")= item[0]
 
         li.nav__item.nav__item__contacts
-          a.nav__link(href='#') контакты
+          a.nav__link.anchor.menu-link(href='#contacts') контакты
 
 
         li.nav__item.nav__item--tel

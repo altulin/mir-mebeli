@@ -392,6 +392,8 @@ const getMenuMobile = () => {
   if (navMenu !== null && windowWidth <= 1000) {
     const linkOpen = $(".header__link--open");
     const linkClose = $(".header__link--close");
+    const menuLink = $(".menu-link");
+    const subMenuLink = $(".sub-list__link");
 
     const menuMobile = new MmenuLight(navMenu);
 
@@ -404,6 +406,15 @@ const getMenuMobile = () => {
 
     linkClose.on("click", (e) => {
       e.preventDefault();
+      drawer.close();
+    });
+
+    menuLink.on("click", (e) => {
+      e.preventDefault();
+      drawer.close();
+    });
+
+    subMenuLink.on("click", (e) => {
       drawer.close();
     });
   }
@@ -483,7 +494,9 @@ const getInputMask = () => {
   const input = $(".mask");
 
   if (check(input)) {
-    input.inputmask({ mask: "+7 (999) 999-9999" });
+    input.inputmask({
+      mask: "+7 (999) 999-9999",
+    });
   }
 };
 
@@ -598,8 +611,8 @@ const getExamleSlider = () => {
 
 function initBasketMap() {
   const myMap = new ymaps.Map("map", {
-    center: [52.2983873, 104.267158],
-    zoom: 12,
+    center: [52.277654, 104.306738],
+    zoom: 16,
     controls: [],
   });
 
@@ -617,7 +630,7 @@ function initBasketMap() {
     }
   );
   const placemarkEtalon = new ymaps.Placemark(
-    [52.2983873, 104.267158],
+    [52.277654, 104.306738],
     {
       balloonContent: getBallon("etalon"),
     },
@@ -632,7 +645,7 @@ function initBasketMap() {
   myMap.geoObjects.add(placemarkMir);
   myMap.geoObjects.add(placemarkEtalon);
 
-  myMap.behaviors.disable("scrollZoom");
+  // myMap.behaviors.disable("scrollZoom");
 }
 
 const createMap = () => {
@@ -646,7 +659,7 @@ const marks = new Map([
   [
     "mir",
     [
-      "Магазин «Мир мебели»",
+      "Салон «Мир мебели»",
       "Партизанская, 56",
       "пн - сб  10:00 - 20:00,  вс 11:00 - 19:00",
     ],
@@ -686,6 +699,24 @@ const scrollToTop = () => {
   }
 };
 
+const getAnchor = () => {
+  const anchorLink = $(".anchor");
+
+  if (check(anchorLink)) {
+    anchorLink.on("click", (e) => {
+      e.preventDefault();
+      $("html, body")
+        .stop()
+        .animate(
+          {
+            scrollTop: $($(e.target).attr("href")).offset().top,
+          },
+          800
+        );
+    });
+  }
+};
+
 const reload = () => {
   window.onresize = function () {
     window.location.reload();
@@ -708,6 +739,7 @@ $(function () {
   createMap();
   actualYear();
   scrollToTop();
+  getAnchor();
 });
 
 //# sourceMappingURL=script.js.map

@@ -6,7 +6,7 @@ block content
 
   section.promo
     .promo__img-wrap
-      +img-retina(`promo-bg`, `jpg`,``,`promo__img`, `1920`,`965`,360, 412, 768, 1200, 1440)
+      +img-retina(`promo-bg`, `jpg`,`интерьер`,`promo__img`, `1920`,`965`,360, 412, 768, 1200, 1440)
 
     .promo__inner
       h2.promo__title Поможем
@@ -40,12 +40,12 @@ block content
                 h3.benefit-item__title= item[0]
               p.benefit-item__text= item[1]
 
-  section.consultation
+  section.consultation#consultation
     .consultation__inner
 
       .consultation__top.cons-top.line-block
         .cons-top__img-wrap
-          +img-retina(`cons-bg`, `jpg`,``,`cons-top__img`, `1920`,`969`,360, 412, 1000, 1200, 1440)("lazy")
+          +img-retina(`cons-bg`, `jpg`,`Консультация`,`cons-top__img`, `1920`,`969`,360, 412, 1000, 1200, 1440)("lazy")
 
 
 
@@ -91,7 +91,7 @@ block content
               while n < 5
                 -n++
                 .slider__item.swiper-slide
-                  +img-retina(`slider-bg-${n}`, `jpg`,``,`slider__img`, `961`,`641`)("lazy")
+                  +img-retina(`slider-bg-${n}`, `jpg`,`интерьер`,`slider__img`, `961`,`641`)("lazy")
 
 
               -n=0
@@ -155,31 +155,29 @@ block content
         .sliders-block__left.slider-info
           .slider-info__container.swiper-container
             .slider-info__wrapper.swiper-wrapper
-              while n<5
-                -n++
+              each item in slider_info
                 ul.slider-info__list.swiper-slide
                   li.slider-info__item
                     span.slider-info__term Объект
-                    span.slider-info__desc= `Квартира, кухня-гостиная ${25*n} м2`
+                    span.slider-info__desc= item[0]
 
                   li.slider-info__item
                     span.slider-info__term Задача
-                    span.slider-info__desc Организация кухни-гостиной для&nbsp;молодой девушки
+                    span.slider-info__desc= item[1]
 
                   li.slider-info__item
                     span.slider-info__term Решение
-                    span.slider-info__desc Перепланировка квартиры с учетом присоединения зоны кухни к&nbsp;гостиной. Предложено стилевое и&nbsp;цветовое решение. Осуществлен подбор материалов, даны рекомендации по&nbsp;освещению.
-              -n=0
+                    span.slider-info__desc= item[2]
 
 
         .sliders-block__right.slider-interior
           .slider-interior__container.swiper-container
             ul.slider-interior__list.swiper-wrapper
-              while n<5
+              while n<7
                 -n++
                 li.slider-interior__item.swiper-slide
                   figure.slider-interior__img-wrap
-                    +img-retina(`interior`, `jpg`,``,`slider-interior__img`, `914`,`647`)("lazy")
+                    +img-retina(`interior-${n}`, `jpg`,`Выполненные проекты`,`slider-interior__img`, `914`,`647`)("lazy")
               -n=0
 
             .slider-interior__controls.interior-controls
@@ -205,7 +203,7 @@ block content
       a.projects__link.open-modal-consultation(href="#") Мне нужна консультация
 
 
-  section.decor
+  section.decor#decor
     .decor__inner.container.container--decor
       .decor__left.decor-left
         .decor-left__title-block.t-block
@@ -357,7 +355,7 @@ block content
               h3.example-slider__title= example[`${n-1}`]
 
               figure.example-slider__img-wrap
-                +img-retina(`examle-bg-${n}`, `jpg`,``,`example-slider__img`, `831`,`677`)("lazy")
+                +img-retina(`examle-bg-${n}`, `jpg`,`Декорирование`,`example-slider__img`, `831`,`677`)("lazy")
           -n=0
 
 
@@ -382,7 +380,7 @@ block content
             | информация
           ul.contacts-data__list-addr.addresses
             li.addresses__item
-              h3 Магазин «Мир мебели»
+              h3 Салон «Мир мебели»
               p Партизанская, 56
               p пн - сб  10:00 - 20:00,  вс 11:00 - 19:00
 
@@ -394,20 +392,20 @@ block content
 
           a.contacts__phone.tel-link(href="tel:+73912265705")
             +svg('tel', 35, 35, 'tel-link')
-            | 7 (3912) 265-705
+            | 7 (3952) 265-705
 
           ul.contacts_soc.social
             li.social__item
-              a.social__link(href="https://www.instagram.com/mirmebely38/" aria-label="" target="_blank")
+              a.social__link(href="https://www.instagram.com/mirmebely38/" aria-label="" target="_blank" rel="noopener")
                 +svg('insta', 40, 40,'social' )
             li.social__item
-              a.social__link(href="" aria-label="" target="_blank")
+              a.social__link(href="viber://chat?number=89500634939" aria-label="viber" target="_blank" rel="noopener")
                 +svg('viber', 40, 40,'social' )
             li.social__item
-              a.social__link(href="" aria-label="" target="_blank")
+              a.social__link(href="https://api.whatsapp.com/send?phone=89500634939" aria-label="" target="_blank" rel="noopener")
                 +svg('whatsapp', 40, 40,'social' )
             li.social__item
-              a.social__link(href="" aria-label="" target="_blank")
+              a.social__link(href="https://tttttt.me/mirmebely_bot" aria-label="telegramm" target="_blank" rel="noopener")
                 +svg('tg', 40, 40,'social' )
 
 
@@ -448,6 +446,6 @@ block content
     .modal__inner
       h2.modal__title.modal__title--success Заявка отправлена
       figure.modal-success__img
-      p.modal__text.modal__text--success Спасибо за обращение в наш салон.
+      p.modal__text.modal__text--success Спасибо за ваше обращение
         br
-        | Мы перезвоним вам в ближайшее время.
+        | Мы перезвоним вам в ближайшее время
