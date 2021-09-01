@@ -157,7 +157,9 @@ const getInputMask = () => {
 
   if (check(input)) {
     input.inputmask({
-      mask: "+7 (999) 999-9999",
+      // mask: "+7 (999) 999-9999",
+      regex: "\\+7\\([0-79]{1}[0-9]{2}\\)\\-[0-9]{3}\\-[0-9]{4}",
+      keepStatic: true,
     });
   }
 };
