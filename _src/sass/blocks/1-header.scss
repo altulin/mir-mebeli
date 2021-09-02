@@ -226,7 +226,19 @@
       }
     }
 
+    & br {
+      display: none;
+
+      @include mw($ldt) {
+        display: block;
+      }
+    }
+
     &__contacts {
+      display: none;
+    }
+
+    &__about {
       display: none;
     }
 
@@ -234,6 +246,10 @@
       background-color: rgba($white, 0.4);
 
       &__contacts {
+        display: block;
+      }
+
+      &__about {
         display: block;
       }
 
@@ -306,6 +322,10 @@
       padding-bottom: 9px;
       padding-left: 56px;
       padding-right: 20px;
+    }
+
+    @include mw($min-ph) {
+      line-height: 26px;
     }
 
     @include hocus(after) {
@@ -515,12 +535,14 @@
     & svg {
       stroke: rgba($white, 0.8);
       transform: scale(0.8);
+      pointer-events: none;
 
     }
   }
 
   &__text {
     margin-left: 10px;
+    pointer-events: none;
   }
 
   &__icon {

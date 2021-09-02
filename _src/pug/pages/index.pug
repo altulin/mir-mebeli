@@ -88,7 +88,7 @@ block content
           .slider__left.swiper-container
 
             .slider__wrapper.swiper-wrapper
-              while n < 5
+              while n < 6
                 -n++
                 .slider__item.swiper-slide
                   +img-retina(`slider-bg-${n}`, `jpg`,`интерьер`,`slider__img`, `961`,`641`)("lazy")
@@ -143,6 +143,7 @@ block content
 
 
   include ../modules/_form.pug
+  //- - idForm++
 
 
   section.projects.line-block
@@ -212,7 +213,7 @@ block content
             span.t-block__text.t-block__text--top  Декорирование
           p.t-block__text.t-block__text--bottom интерьера
         .causes__wrapper
-          h3.causes__mane-title.causes__mane-title--min-hidden Когда полезно
+          //- h3.causes__mane-title.causes__mane-title--min-hidden Когда полезно
           h3.causes__mane-title.causes__mane-title--min-visually Когда подойдет
 
           ul.decor-left__causes.causes
@@ -405,7 +406,7 @@ block content
               a.social__link(href="https://api.whatsapp.com/send?phone=89500634939" aria-label="" target="_blank" rel="noopener")
                 +svg('whatsapp', 40, 40,'social' )
             li.social__item
-              a.social__link(href="https://tttttt.me/mirmebely_bot" aria-label="telegramm" target="_blank" rel="noopener")
+              a.social__link(href="https://tttttt.me/mir_mebely" aria-label="telegramm" target="_blank" rel="noopener")
                 +svg('tg', 40, 40,'social' )
 
 

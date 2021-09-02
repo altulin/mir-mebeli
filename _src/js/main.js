@@ -207,6 +207,7 @@ const getInteriorSlider = () => {
 
   if (check(slider) && check(current) && check(sum)) {
     const swiper = new Swiper(".slider-interior__container", {
+      loop: true,
       spaceBetween: 50,
 
       pagination: {
@@ -226,7 +227,8 @@ const getInteriorSlider = () => {
         },
         slideChange(e) {
           current.text(e.activeIndex + 1);
-          infoSwiper.slideTo(e.activeIndex);
+          // infoSwiper.slideTo(e.activeIndex);
+          // console.log(e.realIndex)
         },
       },
     });
@@ -369,6 +371,7 @@ const getAnchor = () => {
   if (check(anchorLink)) {
     anchorLink.on("click", (e) => {
       e.preventDefault();
+      console.log(e.target);
       $("html, body")
         .stop()
         .animate(

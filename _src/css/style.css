@@ -1720,12 +1720,21 @@ button {
       .nav__item + li {
         margin-left: 4%;
         margin-left: 0; } }
+  .nav__item br {
+    display: none; }
+    @media screen and (max-width: 1440px) {
+      .nav__item br {
+        display: block; } }
   .nav__item__contacts {
+    display: none; }
+  .nav__item__about {
     display: none; }
   @media screen and (max-width: 1000px) {
     .nav__item {
       background-color: rgba(255, 255, 255, 0.4); }
       .nav__item__contacts {
+        display: block; }
+      .nav__item__about {
         display: block; }
       .nav__item + li {
         margin-top: 2px; } }
@@ -1786,6 +1795,9 @@ button {
       padding-bottom: 9px;
       padding-left: 56px;
       padding-right: 20px; } }
+  @media screen and (max-width: 360px) {
+    .nav__link {
+      line-height: 26px; } }
   .nav__link:hover::after, .nav__link:focus::after {
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -1975,9 +1987,11 @@ button {
       stroke: rgba(255, 255, 255, 0.8);
       -webkit-transform: scale(0.8);
           -ms-transform: scale(0.8);
-              transform: scale(0.8); }
+              transform: scale(0.8);
+      pointer-events: none; }
   .record-link__text {
-    margin-left: 10px; }
+    margin-left: 10px;
+    pointer-events: none; }
   .record-link__icon {
     fill: transparent;
     stroke: #405A26; }
@@ -4850,7 +4864,9 @@ button {
     @media screen and (max-width: 1440px) {
       .decor__right {
         top: 14%;
-        width: 43%; } }
+        width: 43%;
+        background-size: 100% 100%;
+        background-image: url(/img/frame-1440.png); } }
     @media screen and (max-width: 1200px) {
       .decor__right {
         top: 19%;
@@ -5755,6 +5771,7 @@ button {
 
 .footer__copy p {
   font-size: 18px;
+  font-weight: 300;
   line-height: 22px;
   text-align: right;
   letter-spacing: 0.02em;

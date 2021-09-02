@@ -15,7 +15,7 @@ header.header#header
       ul.nav__list
 
         li.nav__item
-          a.nav__link.anchor.menu-link(href='#consultation') консультация дизайнера&nbsp;интерьера
+          a.nav__link.anchor.menu-link(href='#consultation') консультация дизайнера интерьера
 
         li.nav__item
           a.nav__link.anchor.menu-link(href='#decor') декорирование интерьера
@@ -30,6 +30,10 @@ header.header#header
                 a.sub-list__link(href=`${item[1]}` target="_blank" rel="noopener")= item[0]
 
         li.nav__item.nav__item__contacts
+          a.nav__link(href='https://mirmebely.ru/about/' target="_blank") О компании
+
+
+        li.nav__item.nav__item__contacts
           a.nav__link.anchor.menu-link(href='#contacts') контакты
 
 
@@ -40,7 +44,7 @@ header.header#header
         span.header__link-text Закрыть меню
         +svg(`menu-close`, 23, 23, `header__link-close`)
 
-      a.nav__record.record-link.record-link--nav(href="#")
+      a.nav__record.record-link.record-link--nav.anchor.menu-link(href="#record-1")
         +svg('record', '90', '49', 'record-link')
         span.record-link__text Заказать звонок
 
