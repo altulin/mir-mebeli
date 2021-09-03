@@ -39,10 +39,10 @@ mixin img-retina(name, type, alt, className, width, height, ...args)
         - sourceArgs[srcsetAttr] = `/img/${name}-${item}.${type} 1x, /img/${name}-${item}@2x.${type} 2x`;
         - let media = `(max-width: ${item}px)`
 
-        source(media = `${media}`)&attributes(sourceArgsWebp)
-        source(media = `${media}`)&attributes(sourceArgs)
+        source(media = `${media}` type="image/webp")&attributes(sourceArgsWebp)
+        source(media = `${media}` type= type==='jpg'?"image/jpeg":`image/${type}`  )&attributes(sourceArgs)
 
-    source&attributes(sourceWebp)
+    source(type="image/webp")&attributes(sourceWebp)
     img&attributes(img)
 
 //- mixin img-retina(name, type, alt, className, width, height, ...args)

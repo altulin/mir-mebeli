@@ -530,7 +530,10 @@ const getInfoSlider = () => {
 
   if (check(slider)) {
     infoSwiper = new Swiper(".slider-info__container", {
+      loop: true,
       effect: "fade",
+      allowTouchMove: false,
+      initialSlide: 0,
       fadeEffect: {
         crossFade: true,
       },
@@ -547,6 +550,7 @@ const getInteriorSlider = () => {
     const swiper = new Swiper(".slider-interior__container", {
       loop: true,
       spaceBetween: 50,
+      initialSlide: 0,
 
       pagination: {
         el: ".interior-controls__pagination",
@@ -560,14 +564,15 @@ const getInteriorSlider = () => {
       },
       on: {
         afterInit(e) {
-          current.text(e.activeIndex + 1);
-          sum.text(e.slides.length);
+          current.text(e.realIndex + 1);
+          sum.text(e.slides.length - 2);
         },
         slideChange(e) {
-          current.text(e.activeIndex + 1);
-          // infoSwiper.slideTo(e.activeIndex);
-          // console.log(e.realIndex)
+          current.text(e.realIndex + 1);
         },
+      },
+      controller: {
+        control: infoSwiper,
       },
     });
   }
@@ -583,14 +588,15 @@ const getExamleSlider = () => {
   const changeSlade = (e) => {
     $(items).on("click", (evt) => {
       evt.preventDefault();
-      $(items).removeClass("example-decor__item--current");
-      swiper.slideTo(evt.target.dataset.slider_num);
+      swiper.slideToLoop(Number(evt.target.dataset.slider_num));
     });
   };
 
   if (check(slider)) {
     swiper = new Swiper(".example-slider", {
       spaceBetween: 50,
+      loop: true,
+      autoHeight: true,
 
       navigation: {
         nextEl: ".example-slider__next",
@@ -598,15 +604,15 @@ const getExamleSlider = () => {
       },
       on: {
         afterInit(e) {
-          $(items[e.activeIndex]).addClass("example-decor__item--current");
+          $(items[e.realIndex]).addClass("example-decor__item--current");
           changeSlade(e);
-          current.text(e.activeIndex + 1);
-          sum.text(e.slides.length);
+          current.text(e.realIndex + 1);
+          sum.text(e.slides.length - 2);
         },
         slideChange(e) {
           $(items).removeClass("example-decor__item--current");
-          $(items[e.activeIndex]).addClass("example-decor__item--current");
-          current.text(e.activeIndex + 1);
+          $(items[e.realIndex]).addClass("example-decor__item--current");
+          current.text(e.realIndex + 1);
         },
       },
     });
@@ -728,8 +734,25 @@ const reload = () => {
   };
 };
 
+const scrollFunction = () => {
+  const btnUp = $(".footer__up");
+
+  if (check(btnUp)) {
+    window.onscroll = () => {
+      if (
+        document.body.scrollTop > 50 ||
+        document.documentElement.scrollTop > 50
+      ) {
+        btnUp.addClass("up--visally");
+      } else {
+        btnUp.removeClass("up--visally");
+      }
+    };
+  }
+};
+
 $(function () {
-  reload();
+  // reload();
   getAccordionNav();
   getDropDown();
   getMenuMobile();
@@ -745,6 +768,7 @@ $(function () {
   actualYear();
   scrollToTop();
   getAnchor();
+  scrollFunction();
 });
 
 //# sourceMappingURL=script.js.map

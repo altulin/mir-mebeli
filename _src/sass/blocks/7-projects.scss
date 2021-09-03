@@ -34,6 +34,7 @@
 
   @include mw($dt) {
     min-height: 1011px;
+    display: block;
   }
 
   @include mw($tb) {
@@ -224,6 +225,7 @@
   justify-content: space-between;
   margin-bottom: 66px;
 
+
   @include mw($dt) {
     margin-bottom: 62px;
     align-items: flex-start;
@@ -251,6 +253,13 @@
 .slider-info {
   width: 33%;
   padding-bottom: 6%;
+
+  &__list {}
+
+
+  &__container {
+    width: 100%;
+  }
 
   @include mw($ldt) {
     width: 35%;
@@ -280,8 +289,9 @@
   }
 
   @include mw($min-ph) {
-    padding-left: 30px;
+    padding-left: 300px;
     padding-right: 30px;
+
   }
 
 

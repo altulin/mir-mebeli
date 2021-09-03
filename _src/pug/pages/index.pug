@@ -184,7 +184,10 @@ block content
             .slider-interior__controls.interior-controls
               .interior-controls__counter
                 span.interior-controls__current
+
+
                 | /
+
 
                 span.interior-controls__sum
 
@@ -213,7 +216,7 @@ block content
             span.t-block__text.t-block__text--top  Декорирование
           p.t-block__text.t-block__text--bottom интерьера
         .causes__wrapper
-          //- h3.causes__mane-title.causes__mane-title--min-hidden Когда полезно
+          h3.causes__mane-title.causes__mane-title--min-hidden Когда полезно
           h3.causes__mane-title.causes__mane-title--min-visually Когда подойдет
 
           ul.decor-left__causes.causes
@@ -365,7 +368,9 @@ block content
           .example-slider__prev
           .example-slider__index
             span.example-slider__index-current
+
             | /
+
             span.example-slider__index-sum
           .example-slider__next
 
@@ -432,8 +437,8 @@ block content
       h2.modal__title.modal__title--consultation Записаться на&nbsp;консультацию
       p.modal__text.modal__text--consultation C вами свяжется дизайнер и&nbsp;ответит на&nbsp;все&nbsp;  вопросы
 
-      form.modal__form.form-consultation
-        .form-consultation__block(action="" method="post")
+      form.modal__form.form-consultation(action="#" method="post")
+        .form-consultation__block
           input.form-consultation__input.form-consultation__input-tel#form-consultation-tel.mask.reset(type="text" name="form-consultation-tel" placeholder="Ваш телефон" required)
           label.form-consultation__label.form-consultation__label-tel(for="form-consultation-tel")
 

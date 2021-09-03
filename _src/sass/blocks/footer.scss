@@ -163,16 +163,37 @@
 
 .up {
 
-  position: absolute;
-  right: -51px;
-  top: 51px;
+  position: fixed;
+  right: 138px;
+  bottom: 250px;
+  display: none;
+  z-index: 1;
+
+  &--visally {
+    display: block;
+  }
+
+  @include mw($ldt) {
+    right: 63px;
+    bottom: 186px;
+  }
+
+  @include mw($dt) {
+    right: 39px;
+    bottom: 181px;
+  }
 
   @include mw($tb) {
+    right: 121px;
+    bottom: 457px;
+  }
+
+  @include mw($ph) {
     right: 22px;
   }
 
   @include mw($min-ph) {
-    right: -10px;
+    right: 8px;
   }
 
   &__link {
