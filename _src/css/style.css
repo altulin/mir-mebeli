@@ -2164,6 +2164,9 @@ button {
     .promo {
       padding-top: 106%;
       margin-top: -156px; } }
+  @media screen and (max-width: 450px) {
+    .promo {
+      padding-top: 130%; } }
   @media screen and (max-width: 412px) {
     .promo {
       padding-top: 157%;
@@ -4575,10 +4578,6 @@ button {
       padding-left: 36px;
       padding-right: 36px;
       max-width: 100%; } }
-  @media screen and (max-width: 360px) {
-    .slider-info {
-      padding-left: 300px;
-      padding-right: 30px; } }
   .slider-info__item {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -5693,7 +5692,8 @@ button {
   margin-top: auto;
   background-color: #36544F;
   padding-left: 135px;
-  padding-right: 135px; }
+  padding-right: 135px;
+  position: relative; }
   @media screen and (max-width: 1440px) {
     .main-footer {
       padding-left: 103px;
@@ -5831,29 +5831,33 @@ button {
 .up {
   position: fixed;
   right: 138px;
-  bottom: 250px;
+  bottom: 138px;
   display: none;
   z-index: 1; }
-  .up--visally {
+  .up--visually {
     display: block; }
+  .up--position {
+    position: absolute; }
   @media screen and (max-width: 1440px) {
     .up {
       right: 63px;
-      bottom: 186px; } }
+      bottom: 63px; } }
   @media screen and (max-width: 1200px) {
     .up {
       right: 39px;
-      bottom: 181px; } }
+      bottom: 39px; } }
   @media screen and (max-width: 768px) {
     .up {
       right: 121px;
-      bottom: 457px; } }
+      bottom: 121px; } }
   @media screen and (max-width: 412px) {
     .up {
-      right: 22px; } }
+      right: 22px;
+      bottom: 22px; } }
   @media screen and (max-width: 360px) {
     .up {
-      right: 8px; } }
+      right: 8px;
+      bottom: 8px; } }
   .up__link {
     display: block;
     width: 51px;

@@ -3,6 +3,7 @@
   background-color: #36544F;
   padding-left: 135px;
   padding-right: 135px;
+  position: relative;
 
   @include mw($ldt) {
     padding-left: 103px;
@@ -165,35 +166,42 @@
 
   position: fixed;
   right: 138px;
-  bottom: 250px;
+  // bottom: 250px;
+  bottom: 138px;
   display: none;
   z-index: 1;
 
-  &--visally {
+  &--visually {
     display: block;
+  }
+
+  &--position {
+    position: absolute;
   }
 
   @include mw($ldt) {
     right: 63px;
-    bottom: 186px;
+    bottom: 63px;
   }
 
   @include mw($dt) {
     right: 39px;
-    bottom: 181px;
+    bottom: 39px;
   }
 
   @include mw($tb) {
     right: 121px;
-    bottom: 457px;
+    bottom: 121px;
   }
 
   @include mw($ph) {
     right: 22px;
+    bottom: 22px;
   }
 
   @include mw($min-ph) {
     right: 8px;
+    bottom: 8px;
   }
 
   &__link {

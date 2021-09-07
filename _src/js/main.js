@@ -283,13 +283,14 @@ const getExamleSlider = () => {
 
 function initBasketMap() {
   const myMap = new ymaps.Map("map", {
-    center: [52.277654, 104.306738],
+    center: [52.27747, 104.30572],
     zoom: 16,
     controls: [],
   });
 
   const placemarkMir = new ymaps.Placemark(
-    [52.27707, 104.30602],
+    [52.27707, 104.30592],
+
     {
       balloonContent: getBallon("mir"),
       maxWidth: 300,
@@ -298,6 +299,7 @@ function initBasketMap() {
       iconLayout: "default#image",
       iconImageHref: "./img/svg/mark-map.svg",
       iconImageSize: [51, 73],
+      iconImageOffset: [-25, -73],
       // hideIconOnBalloonOpen: false,
     }
   );
@@ -310,6 +312,7 @@ function initBasketMap() {
       iconLayout: "default#image",
       iconImageHref: "./img/svg/mark-map.svg",
       iconImageSize: [51, 73],
+      iconImageOffset: [-25, -73],
       // hideIconOnBalloonOpen: false,
     }
   );
@@ -398,16 +401,31 @@ const reload = () => {
 
 const scrollFunction = () => {
   const btnUp = $(".footer__up");
+  const footerHeight = $(".main-footer");
+  const bottom = footerHeight.height() - btnUp.offset().right;
 
   if (check(btnUp)) {
     window.onscroll = () => {
+      const scrollBottom =
+        document.documentElement.scrollHeight -
+        document.documentElement.scrollTop -
+        document.documentElement.clientHeight;
       if (
         document.body.scrollTop > 50 ||
         document.documentElement.scrollTop > 50
       ) {
-        btnUp.addClass("up--visally");
+        btnUp.addClass("up--visually");
       } else {
-        btnUp.removeClass("up--visally");
+        btnUp.removeClass("up--visually");
+      }
+
+      if (scrollBottom < footerHeight.height()) {
+        btnUp.addClass("up--position");
+
+        btnUp.css({ top: `50px` });
+      } else {
+        btnUp.removeClass("up--position");
+        btnUp.css({ top: `auto` });
       }
     };
   }

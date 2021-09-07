@@ -22,6 +22,10 @@
     margin-top: -156px;
   }
 
+  @include mw(450px) {
+    padding-top: 130%;
+  }
+
   @include mw($ph) {
     padding-top: 157%;
     margin-top: -132px;

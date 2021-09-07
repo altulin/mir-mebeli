@@ -288,11 +288,7 @@
     max-width: 100%;
   }
 
-  @include mw($min-ph) {
-    padding-left: 300px;
-    padding-right: 30px;
-
-  }
+  @include mw($min-ph) {}
 
 
 
