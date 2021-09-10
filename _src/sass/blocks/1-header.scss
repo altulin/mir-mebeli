@@ -67,6 +67,7 @@
       position: relative;
       padding-top: 36px;
       padding-bottom: 36px;
+      display: none;
     }
   }
 
@@ -494,6 +495,12 @@
   background-image: linear-gradient(0deg, #36544F, #36544F),
     linear-gradient(0deg, #718753, #718753);
   overflow-y: auto;
+
+  @include mw($empty) {
+    & .header__nav {
+      display: block;
+    }
+  }
 }
 
 .mm-ocd__backdrop {

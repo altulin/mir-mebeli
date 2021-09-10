@@ -44,6 +44,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include mw($ph) {
+      height: 100%;
+      justify-content: center;
+    }
   }
 
   &__title {

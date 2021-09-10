@@ -34,7 +34,7 @@
 
   @include mw($dt) {
     min-height: 1011px;
-    display: block;
+    // display: block;
   }
 
   @include mw($tb) {
@@ -175,7 +175,7 @@
     max-width: 548px;
     padding-top: 28px;
     padding-bottom: 28px;
-    transition: 0.3s;
+    transition: background-color 0.3s;
     margin-left: auto;
     margin-right: auto;
 
@@ -184,10 +184,23 @@
     }
 
     @include mw($ldt) {
-      margin-left: 22%;
+      // margin-left: 22%;
+      margin-left: 0;
+
+      margin-right: 0;
+      position: relative;
+      left: 50%;
+      transform: translateX(calc(-50% - 80px));
+    }
+
+    @include mw($dt) {
+      transform: translateX(calc(-50% - 50px));
     }
 
     @include mw($empty) {
+      transform: none;
+      left: auto;
+
       max-width: 337px;
       margin-left: auto;
       margin-right: auto;

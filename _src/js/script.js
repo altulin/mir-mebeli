@@ -351,6 +351,7 @@ const check = (element) => {
   if (element.length > 0) {
     return true;
   }
+
   return false;
 };
 
@@ -415,6 +416,7 @@ const getMenuMobile = () => {
     });
 
     subMenuLink.on("click", (e) => {
+      e.preventDefault();
       drawer.close();
     });
   }
@@ -454,6 +456,7 @@ const sendFormConsultation = () => {
       const data = $(this).serialize();
 
       e.preventDefault();
+
       $.ajax({
         url: "https://httpbin.org/anything",
         method: "post",
@@ -476,6 +479,7 @@ const sendFormRecord = () => {
       const data = $(this).serialize();
 
       e.preventDefault();
+
       $.ajax({
         url: "https://httpbin.org/anything",
         method: "post",
@@ -562,15 +566,18 @@ const getInteriorSlider = () => {
         nextEl: ".interior-controls__next",
         prevEl: ".interior-controls__prev",
       },
+
       on: {
         afterInit(e) {
           current.text(e.realIndex + 1);
           sum.text(e.slides.length - 2);
         },
+
         slideChange(e) {
           current.text(e.realIndex + 1);
         },
       },
+
       controller: {
         control: infoSwiper,
       },
@@ -602,6 +609,7 @@ const getExamleSlider = () => {
         nextEl: ".example-slider__next",
         prevEl: ".example-slider__prev",
       },
+
       on: {
         afterInit(e) {
           $(items[e.realIndex]).addClass("example-decor__item--current");
@@ -609,6 +617,7 @@ const getExamleSlider = () => {
           current.text(e.realIndex + 1);
           sum.text(e.slides.length - 2);
         },
+
         slideChange(e) {
           $(items).removeClass("example-decor__item--current");
           $(items[e.realIndex]).addClass("example-decor__item--current");
@@ -616,55 +625,6 @@ const getExamleSlider = () => {
         },
       },
     });
-  }
-};
-
-function initBasketMap() {
-  const myMap = new ymaps.Map("map", {
-    center: [52.27747, 104.30572],
-    zoom: 16,
-    controls: [],
-  });
-
-  const placemarkMir = new ymaps.Placemark(
-    [52.27707, 104.30592],
-
-    {
-      balloonContent: getBallon("mir"),
-      maxWidth: 300,
-    },
-    {
-      iconLayout: "default#image",
-      iconImageHref: "./img/svg/mark-map.svg",
-      iconImageSize: [51, 73],
-      iconImageOffset: [-25, -73],
-      // hideIconOnBalloonOpen: false,
-    }
-  );
-  const placemarkEtalon = new ymaps.Placemark(
-    [52.277654, 104.306738],
-    {
-      balloonContent: getBallon("etalon"),
-    },
-    {
-      iconLayout: "default#image",
-      iconImageHref: "./img/svg/mark-map.svg",
-      iconImageSize: [51, 73],
-      iconImageOffset: [-25, -73],
-      // hideIconOnBalloonOpen: false,
-    }
-  );
-
-  myMap.geoObjects.add(placemarkMir);
-  myMap.geoObjects.add(placemarkEtalon);
-
-  // myMap.behaviors.disable("scrollZoom");
-}
-
-const createMap = () => {
-  const map = $("#map");
-  if (check(map)) {
-    ymaps.ready(initBasketMap);
   }
 };
 
@@ -689,10 +649,63 @@ const marks = new Map([
 
 const getBallon = (name) => {
   return `<div class="addresses__item">
-    <h3>${marks.get(name)[0]}</h3>
-    <p>${marks.get(name)[1]}</p>
-    <p>${marks.get(name)[2]}</p>
+    <h3> ${marks.get(name)[0]}</h3>
+      <p>${marks.get(name)[1]}</p>
+      <p>${marks.get(name)[2]}</p>
   </div>`;
+};
+
+function initBasketMap() {
+  const myMap = new ymaps.Map("map", {
+    center: [52.27747, 104.30572],
+    zoom: 16,
+    controls: [],
+  });
+
+  const placemarkMir = new ymaps.Placemark(
+    [52.27707, 104.30592],
+
+    {
+      balloonContent: getBallon("mir"),
+      maxWidth: 300,
+    },
+
+    {
+      iconLayout: "default#image",
+      iconImageHref: "./img/svg/mark-map.svg",
+      iconImageSize: [51, 73],
+      iconImageOffset: [-25, -73],
+      // hideIconOnBalloonOpen: false,
+    }
+  );
+
+  const placemarkEtalon = new ymaps.Placemark(
+    [52.277654, 104.306738],
+    {
+      balloonContent: getBallon("etalon"),
+    },
+
+    {
+      iconLayout: "default#image",
+      iconImageHref: "./img/svg/mark-map.svg",
+      iconImageSize: [51, 73],
+      iconImageOffset: [-25, -73],
+      // hideIconOnBalloonOpen: false,
+    }
+  );
+
+  myMap.geoObjects.add(placemarkMir);
+  myMap.geoObjects.add(placemarkEtalon);
+
+  // myMap.behaviors.disable("scrollZoom");
+}
+
+const createMap = () => {
+  const map = $("#map");
+
+  if (check(map)) {
+    ymaps.ready(initBasketMap);
+  }
 };
 
 const scrollToTop = () => {
@@ -702,10 +715,12 @@ const scrollToTop = () => {
   if (check(link)) {
     link.on("click", (e) => {
       e.preventDefault();
+
       top.animate(
         {
           scrollTop: 0,
         },
+
         800
       );
     });
@@ -719,12 +734,14 @@ const getAnchor = () => {
     anchorLink.on("click", (e) => {
       e.preventDefault();
       console.log(e.target);
+
       $("html, body")
         .stop()
         .animate(
           {
             scrollTop: $($(e.target).attr("href")).offset().top,
           },
+
           800
         );
     });
@@ -748,6 +765,7 @@ const scrollFunction = () => {
         document.documentElement.scrollHeight -
         document.documentElement.scrollTop -
         document.documentElement.clientHeight;
+
       if (
         document.body.scrollTop > 50 ||
         document.documentElement.scrollTop > 50
@@ -760,10 +778,15 @@ const scrollFunction = () => {
       if (scrollBottom < footerHeight.height()) {
         btnUp.addClass("up--position");
 
-        btnUp.css({ top: `50px` });
+        btnUp.css({
+          top: `50px`,
+        });
       } else {
         btnUp.removeClass("up--position");
-        btnUp.css({ top: `auto` });
+
+        btnUp.css({
+          top: `auto`,
+        });
       }
     };
   }

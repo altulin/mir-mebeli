@@ -418,9 +418,15 @@
     margin-right: auto;
   }
 
-  @include mw($min-ph) {
+  @include mw(411px) {
     max-width: 300px;
   }
+
+  @include mw(320px) {
+    max-width: 274px;
+  }
+
+
 
 
   &__dt {
@@ -472,9 +478,15 @@
       line-height: 38px;
     }
 
-    @include mw($min-ph) {
+
+    @include mw(411px) {
       font-size: 28px;
       line-height: 32px;
+    }
+
+    @include mw($min-ph) {
+      // font-size: 28px;
+      // line-height: 32px;
     }
   }
 
